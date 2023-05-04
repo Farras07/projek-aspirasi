@@ -1,0 +1,16 @@
+.formContainer{
+    margin: auto;
+    width: 55%;
+    font-family: 'Montserrat', sans-serif;
+}
+.formInput{
+    border-radius: 16px;
+    border: 2px solid rgb(49, 49, 49);
+    color: rgba(25, 25, 25, 0.6);
+}
+.formInput:focus{
+    color: rgba(25, 25, 25, 0.6);
+    border: 2px solid black;
+    box-shadow: 0px 0px 8px 2px rgb(163, 163, 163);
+}
+
