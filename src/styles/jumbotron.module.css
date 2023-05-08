@@ -1,0 +1,43 @@
+.btnJum{
+   padding:0.5em !important;
+   border-radius: 5px;
+}
+.subTitle{
+    font-size:2em !important;
+   }
+
+   .jumDiv{
+      margin-top: 150px !important;
+     }
+
+@media screen and ( max-width: 576px){
+   .titleText{
+    font-size:1.5em;
+   }
+
+   .subTitle{
+    font-size:0.5em;
+   }
+
+   .jumDiv{
+    margin-top: 0px !important;
+   }
+
+   .btnJum{
+    text-align:center;
+   padding:0em !important;
+ }
+}
+
+@media screen and ( max-width: 768px){
+ 
+    .jumDiv{
+     margin-top: 150px !important;
+    }
+    .subTitle{
+        font-size:1em !important;
+    }
+
+ }
+
+ 
