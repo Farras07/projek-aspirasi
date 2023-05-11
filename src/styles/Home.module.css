@@ -227,3 +227,11 @@
     transform: rotate(0deg);
   }
 }
+
+.navH1{
+  font-size:100px;
+}
+
+@media screen and ( max-width: 360px){
+  
+}

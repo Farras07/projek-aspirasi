@@ -1,0 +1,156 @@
+.footCont {
+    width:100%;
+    height:100px;
+    background-color: black;
+    margin:0px;
+    padding:0px;
+    margin-top:30px;
+    height:fit-content;
+}
+
+
+.pFootDiv{
+    font-size:0.8em;
+
+}
+
+
+
+.navH1{
+    font-size:0.7em !important;
+    margin:0em !important;
+    padding:0px !important;
+    
+}
+.navP{
+    font-size:0.7em !important;
+}
+.divNavText{
+    margin-top:1em !important;
+    color:white;
+}
+
+.navLogo{
+    width:4em;
+}
+
+@media screen and ( max-width: 768px){
+    .navH1{
+        font-size:0.7em !important;
+        margin:0em !important;
+        padding:0px !important;
+    }
+    .navP{
+        font-size:0.7em !important;
+    }
+    .divNavText{
+        margin-top:1em !important;
+    }
+
+    .navLogo{
+        width:2.5em;
+    }
+
+    .pFootDiv{
+        font-size:0.8em;
+    }
+
+    .pContact{
+        font-size:0.65em;
+    }
+
+    .pAddr{
+        font-size:0.65em;
+        width: 25%;
+    }
+
+    
+}
+
+@media screen and ( max-width: 576px){
+    .pFootDiv{
+        font-size:0.6em;
+    }
+
+    .navP{
+        font-size: 0.63em !important;
+    }
+
+    .pAddr{
+       margin:0px !important;
+       margin-top:1em !important;
+    }
+
+
+}
+
+@media screen and ( max-width: 576px){
+    .pFootDiv{
+        font-size:0.6em;
+        
+    }
+
+    .navP{
+        font-size: 0.63em !important;
+        
+    }
+
+}
+
+@media screen and ( max-width: 576px){
+    .pFootDiv{
+        font-size:0.5em;
+    }
+
+    .navP{
+        font-size: 0.63em !important;
+        line-height:0.5em !important;
+    }
+
+}
+
+@media screen and ( max-width: 482px){
+
+    .navP{
+        font-size:0.7em !important;
+        line-height:0em !important;
+    }
+    .navLogo{
+        height:fit-content;
+    }
+
+    .footCont{
+        flex-direction: column;
+    }
+
+    
+  
+}
+
+@media screen and ( max-width: 376px){
+
+    .divLogo{
+        margin:0.2em !important;
+        height:fit-content !important;
+    }
+    .navP{
+        font-size:0.5em !important;
+    }
+    .navLogo{
+        height:fit-content;
+        width: 2em !important;
+        margin-top:0.2em !important;
+    }
+
+    .pContact{
+        font-size:0.5em !important;
+        padding-left: 0em !important;
+    }
+
+
+.footCont{
+    flex-direction: column;
+}
+   
+  
+}

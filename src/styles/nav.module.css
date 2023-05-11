@@ -1,0 +1,125 @@
+.navBar{
+    background-color:#121212;
+    position: fixed;
+    width:100%;
+    top:0px;
+}
+
+.hamNav{
+    display:none !important;
+}
+
+
+.navH1{
+    font-size:1em !important;
+    margin:0em !important;
+    padding:0px !important;
+}
+.navP{
+    font-size:1em !important;
+}
+.divNavText{
+    margin-top:1em !important;
+}
+
+.navLogo{
+    width:4em;
+}
+
+@media screen and ( max-width: 768px){
+    .navH1{
+        font-size:0.7em !important;
+        margin:0em !important;
+        padding:0px !important;
+    }
+    .navP{
+        font-size:0.7em !important;
+    }
+    .divNavText{
+        margin-top:1em !important;
+    }
+
+    .navLogo{
+        width:2.5em;
+    }
+
+    .ulNav li{
+        margin-left: 2em;
+        margin-right: 2em;
+
+    }
+}
+
+@media screen and ( max-width: 576px){
+    .ulNav{
+        display:flex;
+        flex-direction:column;
+        position:absolute;
+        background-color: #121212;
+        text-align:center;
+        padding:2em;
+        right:-500px;
+        top:50px;
+        z-index:-1;
+        transition: all 1s ease-in-out;
+    }
+    .ulNav.show{
+        right:0px;
+    }
+    
+   
+    .navBar{
+       justify-content:justify-around;
+    }
+
+    .divNavText{
+        width:80%;
+    }
+
+    .hamNav{
+        display:flex !important;
+        width: 5em;
+    
+    }
+
+    .hamNav span{
+        height: 7px;
+        width:50% !important;
+        border-radius: 10px !important;
+        
+
+    }
+
+    .an11{
+        transform : rotate(0deg) translate(0px, 0px);
+        transition: all 1s ease-in-out;
+    }
+
+    .an22{
+        transform : scale(1);
+        transition: all 1s ease-in-out;
+    }
+    .an33{
+        transform : rotate(0deg) translate(0px, 0px);
+        transition: all 1s ease-in-out;
+    }
+
+    
+
+    .an1{
+        transform : rotate(45deg) translate(10px, 10px);
+        transition: all 1s ease-in-out;
+    }
+
+    .an2{
+        transform : scale(0);
+        transition: all 1s ease-in-out;
+    }
+
+    .an3{
+        transform : rotate(-45deg) translate(11px, -11px);
+        transition: all 1s ease-in-out;
+    }
+
+
+}
