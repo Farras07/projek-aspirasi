@@ -1,0 +1,97 @@
+/* body {
+    font-family: 'Poppins', sans-serif;
+    color: #121212;
+    margin: 0;
+    padding: 0;
+} */
+
+.h1 {
+    font-size: 37px;
+}
+
+.formLogin div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.formLogin div label {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.inputUsername input, .inputPassword input  {
+    padding: 5px 5px 5px 5px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    border: none;
+    border-bottom: 1px solid #121212;
+    color: #121212;
+}
+
+.inputUsername input:focus, .inputPassword input:focus {
+    outline: none;
+}
+
+.btn {
+    margin-top: 23px;
+    width: 100%;
+    padding: 5px 0px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    border: 1px solid #121212;
+    color: #121212;
+    border-radius: 4px;
+    transition: all 0.4s;
+}
+
+.btn:hover {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+@media (min-width: 1801px) {
+    .LoginCont {
+        height: 100vh;
+        padding: 0px 35%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 881px) and (max-width: 1800px) {
+    .LoginCont {
+        height: 100vh;
+        padding: 0px 35%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .h1 {
+        text-align: center;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 880px) {
+    .LoginCont {
+        height: 100vh;
+        padding: 0px 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 576px) {
+    .LoginCont {
+        height: 100vh;
+        padding: 0px 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

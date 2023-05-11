@@ -16,6 +16,10 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  color: #121212;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -32,10 +36,8 @@ a {
   color: inherit;
   text-decoration: none;
 }
-<<<<<<< HEAD
 
 
-=======
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -45,4 +47,3 @@ a {
 ::-webkit-scrollbar-thumb:hover {
   background: #757575; 
 }
->>>>>>> 41696cd1ad8ceab4d6a0f2d0632cf54f944b79ff
