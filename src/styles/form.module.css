@@ -1,16 +1,332 @@
 .formContainer{
-    margin: auto;
-    width: 55%;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif; 
+    padding-top: 3rem;
 }
 .formInput{
-    border-radius: 16px;
-    border: 2px solid rgb(49, 49, 49);
-    color: rgba(25, 25, 25, 0.6);
+    border: none;
+    color: #121212;
+    background-color: #eaeaea;
 }
 .formInput:focus{
-    color: rgba(25, 25, 25, 0.6);
-    border: 2px solid black;
-    box-shadow: 0px 0px 8px 2px rgb(163, 163, 163);
+    background-color: #eaeaea;
+    color: #121212;
+    border: none;
+    outline: none;
+}
+.image{
+    width: 2.7rem;
+}
+.navContainer{
+    justify-content: space-around;
+    width: 100%;
+    height: 15vh;
+}
+.logoDesc{
+    font-family: 'Poppins', sans-serif; 
+}
+.logoSection{
+    align-items: center;
+    width: 43%;
+    margin: 1rem 0
+
+}
+.menuContainer{
+    display: flex;
+    align-items: center;
+    width:50%
+}
+.menuItems{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    font-size: .8em;
+    font-family: 'Poppins', sans-serif; 
+}
+.logoImage{
+    margin-right: 3rem;
+}
+.logoDesc h1{
+    margin-top: 1.2rem;
+    font-size: .9em;
+}
+.logoDesc p{
+    font-size: 0.6em;
+    margin-left: .7rem;
+}
+.leftContainer{
+    align-items:center;
+    width:50%;
+    height: 100%;
+    padding: 0 1.7rem;
+    font-family: 'Poppins', sans-serif; 
+}
+.mainContent{
+    height: 85vh;
+}
+.descSection{
+    width: 100%;
+    margin-bottom: 2rem;
+}
+.descSection h1{
+    font-size: 1.6em;
+    margin-bottom: 2rem;
+}
+.descSection p{
+    font-size: .8em;
+}
+.socmedSection h3{
+    font-size: 1em;
+}
+.formButton{
+    width: 20%;
+    height: 10%;
+    padding: 1rem;
+    background-color: black;
+    color: #e5e5e5;
+    border-radius: 7px;
+    font-size: .6em;
+    display: none;
+}
+.formButton:visited{
+    color: #e5e5e5;
+
+}
+.rightContainer{
+    width: 50%;
+    overflow-y: scroll;
+    font-family: 'Poppins', sans-serif;
+    padding-bottom: 50px;
+}
+.formContainer h2{
+    font-size: 1.4em;
+}
+.formContainer form div label{
+    font-size: .8em;
+}
+.hamburgerMenu{
+    display: none;
+}
+.btn{
+    width: 20%;
+    border: 2px solid rgb(157, 141, 141);
+    transition: all 0.2s;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.btn:hover {
+    background-color: rgb(157, 141, 141);
+    color: #fff;
+}
+.socmedList{
+    display: flex;
+    flex-direction: column;
+}
+.socmedList a{
+    font-size: .8em;
+}
+.socmedList a:hover {
+    color: rgb(157, 141, 141);
 }
 
+@media (max-width: 768px) {
+    .logoSection{
+        margin-left: .5em;
+        width: 50%;
+    }
+    .logoImage{
+        margin-right: 1rem;
+    }
+    .logoDesc h1{
+        font-size: .8rem;
+        margin-top: .3rem;
+    }
+    .logoDesc p{
+        font-size: 0.6em;
+        margin: 0 .5rem;
+    }
+    .formContainer h2{
+        font-size: 1.4em;
+    }
+    .formContainer form div label{
+        font-size: .8em;
+    }
+    .leftContainer{
+        padding: 0 1rem;
+    }
+    .rightContainer{
+        padding-right: 1rem;
+    }
+    .formTextArea{
+        height: 6rem;
+    }
+    .descSection h1{
+        font-size: 1.5em;
+        margin-bottom: 2rem;
+    }
+    .descSection p{
+        font-size: 1em;
+    }
+    .socmedSection h3{
+        font-size: 1.2em;
+    }
+    .btn{
+        width: 35%;
+    }
+}
+@media (max-width: 576px) {
+    .navContainer{
+        top: 0px;
+        background-color: #121212;
+        position: fixed;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        height: 12vh;
+    }
+    .menuContainer{
+        transition: all 1s ease-in;
+        top: 0;
+        right: -500px;
+        position: absolute;
+        width: 40%;
+        height: 35vh;
+        margin-top: 12vh;
+        color: #e5e5e5;
+        background-color: #121212;
+    }
+    .menuItems{
+        height: 100%;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .navMenu {
+        height: 100%;
+        width: 100%;
+    }
+    .navMenu a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+    .navMenu a:focus{
+        width: 100%;
+        background-color: #3c3c3c;
+
+    }
+    .image{
+        width: 2.7rem;
+    }
+    .logoSection{
+        width: 100%;
+        padding-left: .2rem;
+    }
+    .logoImage{
+        margin-right: .7rem;
+    }
+    
+    .logoDesc h1{
+        color: #e5e5e5;
+        font-size: .75rem;
+        margin-top: .3rem;
+    }
+    .logoDesc p{
+        font-size: 0.6em;
+        margin: .2rem 0 0 .1rem;
+    }
+    .hamburgerMenu{
+        position: relative;
+        display: flex;
+        width: 3rem;
+        height: 60%;
+        margin-right: .6rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .hamburgerInput{
+        opacity: .5;
+        position: absolute;
+        z-index:99;
+        width: 100%;
+        height: 100%;
+    }
+    .line{
+        border-radius: 12px;
+        width: 70%;
+        height: .24rem;
+        background-color: #e5e5e5;
+    }
+    .mainContent{
+        margin-top: 12vh;
+        flex-direction: column;
+    }
+    .leftContainer{ 
+        box-sizing: border-box;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        height: 176vh;
+    }
+    .descSection{
+        /* background-color: brown; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+        height: 85vh;
+    }
+    .descSection h1{
+        margin-bottom: 2rem;
+    }
+    .socmedSection{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        height: 40vh;
+    }
+    .socmedList{
+        justify-content: space-around;
+        flex-direction: row;
+    }
+    .formButton{
+        display: flex;
+        width: 40%;
+        font-size: .9em;
+        justify-content: center;
+        align-items: center;
+
+    }
+    /* .formButton{
+        width: 20%;
+        height: 10%;
+        padding: 1rem;
+        background-color: black;
+        color: #e5e5e5;
+        border-radius: 7px;
+        font-size: .6em;
+        display: none;
+    } */
+    .rightContainer{
+        width: 100%;
+        padding: 2rem 2rem;
+        overflow-y: inherit;
+    }
+    .btn{
+        width: 30%;
+        background-color: #121212;
+        color: #e5e5e5;
+        border: none;
+    }
+    .menuContainer.animate{
+        transition: all 1s ease-in;
+        right: 0;
+    }
+
+}

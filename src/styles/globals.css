@@ -32,5 +32,17 @@ a {
   color: inherit;
   text-decoration: none;
 }
+<<<<<<< HEAD
 
 
+=======
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #b1b1b1; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #757575; 
+}
+>>>>>>> 41696cd1ad8ceab4d6a0f2d0632cf54f944b79ff
