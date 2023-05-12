@@ -5,6 +5,64 @@ import Head from 'next/head'
 import styles from '../../styles/form.module.css'
 
 export default function index() {
+//   const { MongoClient } = require('mongodb')
+// const url = 'mongodb://127.0.0.1:27017';
+// const dbName = 'dbProject';
+// const client = new MongoClient(url,{
+//     useNewUrlParser: true,
+//     useUnifiedTopology:true
+// });
+// client.connect((e,client) =>{
+//     if(e) {
+//         return console.log('Koneksi Gagal')
+//     }
+//     console.log('Koneksi berhasil')
+
+//     const db =client.db(dbName)
+//     // db.collection('mahasiswa').insertOne(
+//     //     {
+//     //         nama: 'Lala',
+//     //         Paralel:'C',
+//     //         NPM:'009'
+//     //     },
+//     //     (e,result) =>{
+//     //         if(e){
+//     //             return console.log('Gagal BOS!!')
+//     //         }
+//     //         console.log('Berhasil BOSS!!')
+//     //         console.log(result.ops)
+//     //     }
+//     // )
+//     // console.log(
+//     //     db
+//     //     .collection('mahasiswa')
+//     //     .find()
+//     //     .toArray((e,result) => {
+//     //         console.log(result)
+//     //     } 
+//     //     )
+//     // )
+
+//     db.collection('mahasiswa').updateOne(
+//         {
+//             nama:'Henry'
+//         },
+//         {
+//           $set: {
+//             paralel:'A'
+//         }
+//         }
+//      )
+//      .then(result =>{
+//         console.log('Berhasil Mengubah Data')
+//         console.log(result)
+//      })
+//      .catch(e=>{
+//         console.log('GAGAL!!!')
+//      })
+// })
+
+
   return (
     <>
     <Head>

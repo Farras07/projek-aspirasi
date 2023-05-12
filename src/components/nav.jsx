@@ -12,13 +12,13 @@ export default function Nav() {
 
     </div>
     <div className={`${styles.divNavText} col-xl-5 col-md-5 `}>
-    <h1 className={`${styles.navH1} container-sm fs-6 m-2 text-sm text-start text-white`}>HMPS Keperawatan Anestesiologi</h1>
-    <span className={`${styles.navP} fs-5 text-white`}>Universitas Muhammaddiyah Purwokerto</span>
+    <h1 className={`${styles.navH1} container-sm fs-6 m-2 text-sm text-start text-dark`}>HMPS Keperawatan Anestesiologi</h1>
+    <span className={`${styles.navP} fs-5 text-dark`}>Universitas Muhammaddiyah Purwokerto</span>
     </div>
-    <ul className={`${styles.ulNav} col-xl-5  col-md-5 text-white d-flex ${ !ham ? styles.show : ''}  `}>
-      <li className=' col-xl-5 text-white  pt-4 d-inline'>Home</li>
-      <li className=' col-xl-5 text-white  pt-4 d-inline'>About</li>
-      <li className=' col-xl-5 text-white  pt-4 d-inline'>Contact</li>
+    <ul className={`${styles.ulNav} col-xl-5  col-md-5 text-dark d-flex ${ !ham ? styles.show : ''}  `}>
+      <li className=' col-xl-5 text-dark  pt-4 d-inline'><a>Home</a></li>
+      <li className=' col-xl-5 text-dark  pt-4 d-inline'><a>About</a></li>
+      <li className=' col-xl-5 text-dark  pt-4 d-inline'><a>Contact</a></li>
     </ul>
     <div onClick={()=> setHam(!ham)} className={`${styles.hamNav} text-white  d-flex flex-column `}>
       <span className={`${ styles.an11 } bg-white w-100 m-1 p-0 ${ !ham ? styles.an1 : ''} `}></span>

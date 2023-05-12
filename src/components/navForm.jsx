@@ -33,13 +33,7 @@ export function NavMenu({styles,ham}){
     <section className={`${styles.menuContainer} ${!ham ? styles.animate : ``} `} >
       <article className={`${styles.menuItems}`}>
         <div className={`${styles.navMenu}`}>
-          <a href="#">Home</a>
-        </div>
-        <div className={`${styles.navMenu}`}>
-          <a href="#">About</a>
-        </div>
-        <div className={`${styles.navMenu}`}>
-          <a href="#">Contact</a>
+          <a href="#  n ">{'<< Back To Home'}</a>
         </div>
       </article>
     </section>    

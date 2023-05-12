@@ -1,8 +1,9 @@
 .navBar{
-    background-color:#121212;
+    background-color: white;
     position: fixed;
     width:100%;
     top:0px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .hamNav{
@@ -11,6 +12,7 @@
 
 
 .navH1{
+    color: #121212;
     font-size:1em !important;
     margin:0em !important;
     padding:0px !important;

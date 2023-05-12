@@ -32,8 +32,8 @@ export default function Footer() {
     <div className={` ${styles.pContact} text-white mt-3 w-30 col text-sm`}>
       <h6 className='ps-3'>Contact</h6>
       <ul>
-        <li>Email    : email@gmail.com</li>
-        <li>Number   : +620818XXX</li>
+        <li>Email    : hmpskump@gmail.com</li>
+        <li>Number   : +6287832637839</li>
       </ul>
 
     </div>
