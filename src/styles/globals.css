@@ -15,8 +15,15 @@ font-family: 'Poppins', sans-serif; */
 html,
 body {
   max-width: 100vw;
+  overflow-x:hidden !important;
   overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  color: #121212;
+  margin: 0;
+  padding: 0;
 }
+
+
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -32,7 +39,6 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
 
 ::-webkit-scrollbar {
   width: 10px;
