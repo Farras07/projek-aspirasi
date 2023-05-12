@@ -3,6 +3,24 @@
     position: fixed;
     width:100%;
     top:0px;
+    color:white;
+   
+}
+
+.ulNav2{
+    color:white;
+    
+
+}
+
+
+
+.navBarWhite{
+    background-color:white;
+    position: fixed;
+    width:100%;
+    top:0px;
+    color:black !important;
 }
 
 .hamNav{
@@ -26,6 +44,16 @@
     width:4em;
 }
 
+@media screen and ( max-width: 992px){
+    .ulNav li{
+        margin-left: 2em;
+        margin-right: 2em;
+       
+
+    }
+
+
+}
 @media screen and ( max-width: 768px){
     .navH1{
         font-size:0.7em !important;
@@ -48,6 +76,8 @@
         margin-right: 2em;
 
     }
+
+    
 }
 
 @media screen and ( max-width: 576px){
@@ -59,14 +89,19 @@
         text-align:center;
         padding:2em;
         right:-500px;
-        top:50px;
-        z-index:-1;
+        top:5em;
+        transform:scale(0);
+        z-index:1;
         transition: all 1s ease-in-out;
     }
     .ulNav.show{
         right:0px;
+        transform:scale(1);
     }
     
+    .ulNavWhite{
+        color:white;
+    }
    
     .navBar{
        justify-content:justify-around;
@@ -79,8 +114,17 @@
     .hamNav{
         display:flex !important;
         width: 5em;
-    
     }
+
+    .hamNav2{
+        display:flex !important;
+        width: 5em;
+        position:fixed;
+        right:0;
+    }
+
+
+
 
     .hamNav span{
         height: 7px;
@@ -121,5 +165,13 @@
         transition: all 1s ease-in-out;
     }
 
+    .bgBlack{
+        background-color:#000000 !important;
+        
+    }
 
+    .bgWhite{
+        background-color:white !important;
+        
+    }
 }

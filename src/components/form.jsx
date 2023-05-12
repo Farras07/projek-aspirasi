@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function Form({styles}) {
   return (
+  
+    
     <div className={styles.formContainer}>
         <h2 className='text-center'>Form aspirasi</h2>
         <form className='w-100 py-3 d-flex flex-column' >

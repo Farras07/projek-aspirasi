@@ -2,6 +2,7 @@ import Script from 'next/script';
 import Head from 'next/head';
 import '@/styles/nav.module.css'
 import '@/styles/globals.css';
+import Router from 'next/router';
 
 export default function App({ Component, pageProps }) {
   return(
@@ -21,6 +22,7 @@ export default function App({ Component, pageProps }) {
         integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" 
         crossorigin="anonymous"
       />
+      
 
       <Component {...pageProps} />
 
