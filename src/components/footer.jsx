@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <>
    
- <section className={`${styles.footCont}  bg-dark d-flex col   newNav`} >
+ <section id='contact' className={`${styles.footCont}  bg-dark d-flex col   newNav`} >
   <div className='   col-xl-5 col-md-5 col-sm-5'>
       <div className='d-flex'>
           <div className={`${styles.divLogo} m-2`} >
