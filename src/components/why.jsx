@@ -4,7 +4,7 @@ import styles from '../styles/why.module.css'
 export default function Why() {
   return (
     <>
-     <h2 className='text-center mt-5'>Why Aspiring Your Ideas?</h2>
+     <h2 id="about" className='text-center mt-5'>Why Aspiring Your Ideas?</h2>
  <div className={`${styles.whyCont} w-100  h-100  mx-100 p-2 m-auto d-flex justify-content-center  text-center container   jumbotron  newNav container-fluid mt-5 mb-5 col`} >
   
     <div className={`${styles.whyDiv} h3 w-40 ms-auto col`}>

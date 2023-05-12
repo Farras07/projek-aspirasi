@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import {useState} from 'react'
 
 export default function NavForm({styles}) {
@@ -33,13 +34,13 @@ export function NavMenu({styles,ham}){
     <section className={`${styles.menuContainer} ${!ham ? styles.animate : ``} `} >
       <article className={`${styles.menuItems}`}>
         <div className={`${styles.navMenu}`}>
-          <a href="#">Home</a>
+        <Link href="/">Home</Link>
         </div>
         <div className={`${styles.navMenu}`}>
-          <a href="#">About</a>
+        <Link href="/">About</Link>
         </div>
         <div className={`${styles.navMenu}`}>
-          <a href="#">Contact</a>
+        <Link href="/">Contact</Link>
         </div>
       </article>
     </section>    

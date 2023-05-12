@@ -1,11 +1,8 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import Nav from '../components/nav'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
 import Jumbotron from '@/components/jumbotron'
 import Why from '../components/why'
-import Footer from '../components/footer'
+import Layout from '@/layout/layout'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,12 +15,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main >
-       <Nav styles={styles}/>
-       <Jumbotron/>
+      
+      <Layout page='home'>
+      <Jumbotron/>
        <Why/>
-       <Footer/>
-      </main>
+      </Layout>
+      
+       
+      
     </>
   )
 }
