@@ -32,15 +32,15 @@ export default function Footer() {
     <div className={` ${styles.pContact} text-white mt-3 w-30 col text-sm`}>
       <h6 className='ps-3'>Contact</h6>
       <ul>
-        <li>Email    : email@gmail.com</li>
-        <li>Number   : +620818XXX</li>
+        <li>Email    : hmpskump@gmail.com</li>
+        <li>Number   : +6287832637839</li>
       </ul>
 
     </div>
       <div className={` ${styles.pAddr} text-white mt-3 ms-5 w-30 col  text-sm`}>
         <h6 className='ps-3'>Address</h6>
         <ul>
-          <li>Jl.namaJalan, Purwokerto.</li>
+          <li>Dusun II, Sokaraja Kulon, Kec. Sokaraja, Kabupaten Banyumas, Jawa Tengah 53181</li>
           
         </ul>
 
