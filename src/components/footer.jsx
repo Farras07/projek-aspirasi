@@ -40,7 +40,7 @@ export default function Footer() {
       <div className={` ${styles.pAddr} text-white mt-3 ms-5 w-30 col  text-sm`}>
         <h6 className='ps-3'>Address</h6>
         <ul>
-          <li>Jl.namaJalan, Purwokerto.</li>
+          <li>Dusun II, Sokaraja Kulon, Kec. Sokaraja, Kabupaten Banyumas, Jawa Tengah 53181</li>
           
         </ul>
 

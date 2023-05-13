@@ -1,0 +1,12 @@
+.overflowControl {
+    overflow-x:hidden !important;
+    margin : 0 auto;
+}
+.main{
+    height: 87vh;
+}
+.contentContainer{
+    width: 70%;
+    height: 87vh;
+    padding: 2.8rem 2rem;
+}

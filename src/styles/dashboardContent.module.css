@@ -1,0 +1,47 @@
+.container{
+    width: 96%;
+}
+.h1{
+    font-size: 1.4rem;
+}
+.dataCardContainer{
+    width: 100%;
+}
+.dataCardItems{
+    border: 1px solid transparent;
+    box-shadow: 0 2px 10px rgba(196, 196, 196,0.5);
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    position: relative;
+    border-radius: 15px;
+    width: 30%;
+    padding: 1rem 2rem 0 2rem;
+}
+.dataCardItems:hover{
+    translate: 0 -.5rem;
+    transition: all .8s;
+
+}
+.logo{
+    position: absolute;
+    right: 1.5rem;
+    top: 2rem;
+    z-index: 99;
+}
+.p{
+    margin-top: 1.5rem;
+    font-size: 2em;
+    font-weight: bolder;
+}
+.filterButton{
+    background-color: #2656D0;
+    width: 7rem;
+    height: 2.4rem;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.filterButton:hover{
+    background-color: #1446c4;
+
+}
