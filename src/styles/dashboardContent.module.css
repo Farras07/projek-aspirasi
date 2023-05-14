@@ -1,5 +1,6 @@
 .container{
     width: 96%;
+    position: relative;
 }
 .h1{
     font-size: 1.4rem;
@@ -44,4 +45,19 @@
 .filterButton:hover{
     background-color: #1446c4;
 
+}
+
+.filterMenu{
+    background-color: aliceblue;
+    box-shadow: 0 2px 5px #cfcfcf;
+    position: absolute;
+    width: 20rem;
+    height: 10rem;
+    right: 0;
+    top: 14.9rem;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    display: none;
 }

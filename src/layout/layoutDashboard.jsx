@@ -13,8 +13,8 @@ export default function LayoutDashboard(props) {
       </Head>
       <Header page={props.page} />
       <main className={`${styles.main} d-flex`}>
-        <SideMenu />
-        <div className={`${styles.contentContainer}`}>
+        <SideMenu focus={props.focus}/>
+        <div className={`${(props.responsePage? styles.contentContainerRes : styles.contentContainer)}`}>
           {props.children}
         </div>
       </main>

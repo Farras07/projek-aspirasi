@@ -12,7 +12,7 @@ export default function Nav(props) {
   <nav className={`${props.page === 'home' ? styles.navBar : styles.navBarwhite} 
   ${props.page === 'dashboard' ? styles.navBarDashboard : ''} d-flex p-2 `}>
     <div className='m-2' >
-      <Image className={styles.navLogo} alt='logo' src='logo.svg' width={50} height={50} />
+      <Image className={styles.navLogo} alt='logo' src='/logo.svg' width={50} height={50} />
     </div>
     <div className={`${styles.divNavText} col-xl-5 col-md-5 `}>
       <h1 className={`${styles.navH1} container-sm fs-6 m-2 text-sm text-start `}>HMPS Keperawatan Anestesiologi</h1>
@@ -46,7 +46,7 @@ function NavDashboard() {
   return(
     <div className={`${styles.profileContainer} d-flex align-items-center w-75 justify-content-end`}>
       <div className="profileImage me-3">
-        <Image className={styles.profileLogo} alt='logo' src='profile.svg' width={35} height={35}/> 
+        <Image className={styles.profileLogo} alt='logo' src='/profile.svg' width={35} height={35}/> 
       </div>
       <div className="profileDesc pt-3">
         <p>Administrator</p>

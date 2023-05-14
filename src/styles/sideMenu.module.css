@@ -8,6 +8,21 @@
     border-radius: 11px;
 }
 .linkMenu:hover{
+    background-color: #e8e7e7;
+    box-shadow: 0 2px 5px #cfcfcf;
+    color: black;
+}
+.linkMenuFocus1{
+    background-color: #cfcfcf;
+    box-shadow: 0 2px 5px #cfcfcf;
+    color: black;
+}
+.linkMenuFocus2{
+    background-color: #cfcfcf;
+    box-shadow: 0 2px 5px #cfcfcf;
+    color: black;
+}
+.linkMenuFocus3{
     background-color: #cfcfcf;
     box-shadow: 0 2px 5px #cfcfcf;
     color: black;
@@ -15,6 +30,11 @@
 .container{
     width: 30%;
     height: 87vh;
+}
+.resCon{
+    width: 30%;
+    height: 87vh;
+    position: fixed;
 }
 .ul{
     width: 100%;
