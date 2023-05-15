@@ -19,7 +19,7 @@ export default function index() {
     const responseData = await response.json()
     console.log(responseData)
   }
-  return (
+
     <>
     <Head>
         <title>Form Aspirasi</title>

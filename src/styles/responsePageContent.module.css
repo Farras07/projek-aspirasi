@@ -1,0 +1,89 @@
+.container{
+    width: 96%;
+    position: relative;
+}
+.h1{
+    font-size: 1.4rem;
+}
+.filterButton{
+    background-color: #2656D0;
+    width: 7rem;
+    height: 2.4rem;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.filterButton:hover{
+    background-color: #1446c4;
+}
+.commentSection{
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    height: 73vh;
+}
+.commentSection::-webkit-scrollbar{
+    display: none;
+}
+.commentProfile h3{
+    margin-bottom: .2rem;
+    font-size: .7em;
+}
+.commentProfile p{
+    font-size: .7em;
+}
+.commentContainer span{
+    margin-top: -.2em;
+}
+.commentContainer .pinButton:hover{
+    background-color: #DCA552;
+    border-radius: 10px;
+}
+.commentContainer .unpinButton:hover{
+    background-color: #991313;
+    border-radius: 10px;
+}
+.h3{
+    font-size: .9em;
+    font-weight: bolder;
+    margin-bottom: 0;
+}
+.pComment{
+    font-size: .8em;
+    margin-bottom: .4em;
+}
+.commentContainer{
+    width: 80%;
+    padding: .7rem;
+}
+.commentProfile{
+    width: 20%;
+    padding: .7rem ;
+    background-color: #4a4a4a;
+}
+.filterMenu{
+    background-color: aliceblue;
+    box-shadow: 0 2px 5px #cfcfcf;
+    position: absolute;
+    width: 20rem;
+    height: 10rem;
+    right: 0;
+    top: 2.4rem;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    display: none;
+}
+.FilterMenuItem{
+    height: 50%;
+}
+.FilterMenuItem input{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.cardComment{
+    overflow: hidden;
+    display: flex;
+    border: 2px solid #676666;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}

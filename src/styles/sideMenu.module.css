@@ -1,0 +1,44 @@
+.iconButton{
+    margin-right: .8rem;
+
+}
+.linkMenu{
+    width: 50%;
+    padding: .8rem 0.4rem .8rem 1rem;
+    border-radius: 11px;
+}
+.linkMenu:hover{
+    background-color: #e8e7e7;
+    box-shadow: 0 2px 5px #cfcfcf;
+    color: black;
+}
+.linkMenuFocus1{
+    background-color: #cfcfcf;
+    box-shadow: 0 2px 5px #cfcfcf;
+    color: black;
+}
+.linkMenuFocus2{
+    background-color: #cfcfcf;
+    box-shadow: 0 2px 5px #cfcfcf;
+    color: black;
+}
+.linkMenuFocus3{
+    background-color: #cfcfcf;
+    box-shadow: 0 2px 5px #cfcfcf;
+    color: black;
+}
+.container{
+    width: 30%;
+    height: 87vh;
+}
+.resCon{
+    width: 30%;
+    height: 87vh;
+    position: fixed;
+}
+.ul{
+    width: 100%;
+    height: 45%;
+    padding: 1rem 0 0 3.5rem;
+    margin: 0;
+}
