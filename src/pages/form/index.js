@@ -20,6 +20,7 @@ export default function index() {
     console.log(responseData)
   }
 
+  return (
     <>
     <Head>
         <title>Form Aspirasi</title>

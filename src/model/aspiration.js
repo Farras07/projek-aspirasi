@@ -25,6 +25,11 @@ const AspirationSchema  = new mongoose.Schema({
         type: Date,
         default: Date.now(),
 
+    },
+    pinned:{
+        type: Boolean,
+        default: false,
+
     }
 
 })

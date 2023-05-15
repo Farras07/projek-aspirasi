@@ -5,8 +5,8 @@ import Aspiration from '../../../model/aspiration'
 export default async function  handler (req, res){
 
 
-    console.log(req.body)
-    if (req.method === 'POST') {
+    
+ if (req.method === 'POST') {
 
     const { nama, nim, aspro, asphim } = req.body
     
@@ -43,6 +43,11 @@ export default async function  handler (req, res){
     })
 
 
+
+}else {
+    res.status(404).json({
+        message: 'Not Found'
+    })
 }
 
     
