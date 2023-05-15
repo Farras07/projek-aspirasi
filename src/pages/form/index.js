@@ -6,6 +6,19 @@ import styles from '../../styles/form.module.css'
 import Layout from '@/layout/layout.jsx'
 
 export default function index() {
+
+  const addAspirationHandler = async (data) =>{
+    const response = await fetch("/api/aspiration", {
+      method: "POST",
+      body:  JSON.stringify(data),
+      headers:{
+        "Content-Type" : "application/json"
+      }
+    })
+
+    const responseData = await response.json()
+    console.log(responseData)
+  }
   return (
     <>
     <Head>
@@ -37,7 +50,7 @@ export default function index() {
           </div>
         </div>
         <div className={`${styles.rightContainer}`} id='formSection'>
-          <Myform styles={styles}/>
+          <Myform styles={styles} addAspirationHandler={addAspirationHandler}/>
         </div>
       </div>
     </Layout>

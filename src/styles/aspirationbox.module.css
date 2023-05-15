@@ -1,0 +1,13 @@
+
+.aspirationCont {
+ border: 1px solid black;
+ border-radius: 10px;
+ margin:1em;
+ transition:all 1s ease-in-out;
+}
+
+.aspirationCont:hover {
+    transform:scale(1.2);
+    cursor:pointer;
+    transition:all 1s ease-in-out;
+   }
