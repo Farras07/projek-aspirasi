@@ -18,14 +18,15 @@ export default function Nav(props) {
       <h1 className={`${styles.navH1} container-sm fs-6 m-2 text-sm text-start `}>HMPS Keperawatan Anestesiologi</h1>
       <span className={`${styles.navP} fs-5 `}>Universitas Muhammaddiyah Purwokerto</span>
     </div>
-    {(props.page ==='dashboard'? <NavDashboard />: <NavListMenu props={props} ham={ham}/>)}
+    {(props.page ==='dashboard'? <NavDashboard />: <NavListMenu props={props} ham={ham} setHam={setHam}/>)}
     
     
   </nav>
   )
 }
 
-function NavListMenu({props,ham}) {
+function NavListMenu({props,ham, setHam}) {
+
   return(
     <>
       <ul className={`${styles.ulNav} ${props.page === 'home' ? '' : styles.ulNavWhite} col-xl-5  col-md-5 d-flex ${ ham ? styles.show : ''}  `}>
