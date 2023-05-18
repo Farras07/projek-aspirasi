@@ -8,10 +8,7 @@ export default function ResponsePageContent(props) {
     const [isFilterShow,setIsFilterShow] = useState(false)
     const [ascSortFilter,setAscSortFilter] = useState(false)
     const [dataChange, setDataChange] = useState(datas);
-    const [deleteId, setDeleteId] = useState('');
     const ref = useRef(null)
-    let indexDelete = null
-
     useEffect(() => {
         setDataChange(dataChange);
       }, [dataChange]);
@@ -37,24 +34,14 @@ export default function ResponsePageContent(props) {
 
       }
       const deleteHandler = async (id) =>{
-        const deleteId =id
-        setDeleteId(deleteId)
         const response = await fetch(`/api/aspiration/${id}`, {
           method: "DELETE",
           headers:{
             "Content-Type" : "application/json"
           },
-          
         })
-        const findData = dataChange.find((data,i)=>{
-          if(data._id === deleteId){
-            dataChange.splice(i,i)
-          }
-        })
-        const updatedData = dataChange.map((data) =>
-        data._id === id ? findData() : data
-      );
-      setDataChange(updatedData)
+        const updatedData = dataChange.filter((data)=>data._id !==id)
+        setDataChange(updatedData)
       }
       
 
@@ -109,7 +96,7 @@ export default function ResponsePageContent(props) {
         </div>
 
         <section  className={`${styles.commentSection}` }>
-{dataChange.map((data , i) =>(  !data.pinned && data._id!== ""?( 
+{dataChange.map((data , i) =>(  !data.pinned ?( 
             <article key={i} className={`${styles.cardComment}`}>
                 <div className={`${styles.commentProfile} d-flex justify-content-center align-items-center flex-column text-center`}>
                     <h3 className={`${styles.h3} text-white`}>{data.nama}</h3>
@@ -120,7 +107,7 @@ export default function ResponsePageContent(props) {
                         <p className={`${styles.pComment}`}>{data.date}</p>
                         <div className={`${styles.action} d-flex justify-content-between`}>
                           <span onClick={()=>{pinnedHandler(data._id)}} className={`${styles.pinButton}`}><Image alt='pin'src='/pin.svg' width={30} height={30}/></span>
-                          <span onClick={()=>deleteHandler(data._id)} className={`${styles.deleteButton}`}><Image alt='delete' src='/bin.svg' width={30} height={30}/></span>
+                          <span onClick={()=>{deleteHandler(data._id)}} className={`${styles.deleteButton}`}><Image alt='delete' src='/bin.svg' width={30} height={30}/></span>
                         </div>
                     </div>
                     <h3 className={`${styles.h3}`}>Aspirasi Untuk Prodi</h3>

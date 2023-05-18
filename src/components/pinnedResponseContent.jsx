@@ -32,14 +32,15 @@ export default function PinnedResponseContent(props) {
       );
       setDataChange(updatedData);
       }
-    const deleteHandler = async (id) =>{
+      const deleteHandler = async (id) =>{
         const response = await fetch(`/api/aspiration/${id}`, {
           method: "DELETE",
           headers:{
             "Content-Type" : "application/json"
           },
-
         })
+        const updatedData = dataChange.filter((data)=>data._id !==id)
+        setDataChange(updatedData)
       }
       
 
