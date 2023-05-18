@@ -36,10 +36,17 @@
 .commentContainer .pinButton:hover{
     background-color: #DCA552;
     border-radius: 10px;
+    cursor: pointer;
 }
 .commentContainer .unpinButton:hover{
     background-color: #991313;
     border-radius: 10px;
+    cursor: pointer;
+}
+.commentContainer .deleteButton:hover{
+    background-color: #000000;
+    border-radius: 10px;
+    cursor: pointer;
 }
 .h3{
     font-size: .9em;
@@ -86,4 +93,7 @@
     border: 2px solid #676666;
     border-radius: 10px;
     margin-bottom: 1rem;
+}
+.action{
+    width: 9%;
 }

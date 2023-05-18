@@ -13,7 +13,7 @@ export default function aspirationBox( props) {
   const {post: datas } = props.data
 console.log(datas)
 
-const router = useRouter()
+// const router = useRouter()
    
   return (
 
