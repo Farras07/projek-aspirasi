@@ -1,5 +1,6 @@
 import dbConnect from '../../../db/mongo/db'
 import Aspiration from '../../../model/aspiration'
+import authorization from '@/middlewares/authorization'
 
 
 export default async function  handler (req, res){
@@ -30,6 +31,8 @@ export default async function  handler (req, res){
 
 
 }else if (req.method === 'GET'){
+
+    await authorization(req,res)
 
     await dbConnect()
       

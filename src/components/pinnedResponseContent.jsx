@@ -4,6 +4,9 @@ import Image from 'next/image'
 
 export default function PinnedResponseContent(props) {
     const {post: datas } = props.data
+    const {token} =props
+
+   
 
     const [isFilterShow,setIsFilterShow] = useState(false)
     const [dataChange, setDataChange] = useState(datas);
@@ -14,11 +17,12 @@ export default function PinnedResponseContent(props) {
         setDataChange(dataChange);
       }, [dataChange]);
 
-    const pinnedHandler = async (id) =>{
+    const pinnedHandler = async (id,token) =>{
         const response = await fetch(`/api/aspiration/${id}`, {
           method: "PUT",
           headers:{
-            "Content-Type" : "application/json"
+            "Content-Type" : "application/json",
+            "Authorization" : "Bearer " + token
           },
 
         })
@@ -89,7 +93,7 @@ export default function PinnedResponseContent(props) {
             <div className={`${styles.commentContainer}`}>
                 <div className="headerComment d-flex justify-content-between">
                     <p className={`${styles.pComment}`}>{data.date}</p>
-                    <span onClick={()=>pinnedHandler(data._id)} className={`${styles.unpinButton}`}><Image alt='unpin'src='/unpin.svg' width={30} height={30}/></span>
+                    <span onClick={()=>pinnedHandler(data._id, token)} className={`${styles.unpinButton}`}><Image alt='unpin'src='/unpin.svg' width={30} height={30}/></span>
                 </div>
                 <h3 className={`${styles.h3}`}>Aspirasi Untuk Prodi</h3>
                 <p className={`${styles.pComment}`}>{data.aspro}</p>

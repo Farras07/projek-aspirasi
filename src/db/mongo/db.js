@@ -8,10 +8,10 @@ async function dbConnect() {
         return
     }
 
-   const db = await mongoose.connect('mongodb+srv://rootadmin:adminix123@cluster0.6vs28ld.mongodb.net/coba?retryWrites=true&w=majority',{
+   const db = await mongoose.connect('mongodb://localhost:27017/aspirations',{
     useNewUrlParser: true,
     useUnifiedTopology: true,
-});
+  });
 
 
 connection.isConnected = db.connections[0].readyState

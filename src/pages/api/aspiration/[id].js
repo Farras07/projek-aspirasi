@@ -1,9 +1,11 @@
 import dbConnect from '../../../db/mongo/db'
 import aspiration from '../../../model/aspiration'
 import Aspiration from '../../../model/aspiration'
-
+import authorization from '@/middlewares/authorization'
 
 export default async function handler (req, res){
+    
+    await authorization(req, res)
     
     if ( req.method === 'DELETE' ){
         console.log('oke')

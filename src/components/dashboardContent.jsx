@@ -4,6 +4,8 @@ import Image from 'next/image'
 
 export default function DashboardContent(props) {
     const {post: datas } = props.data
+    const {token} =props
+    
     console.log( datas)
     const [isFilterShow,setIsFilterShow] = useState(false)
     const ref = useRef(null)
