@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState,useRef } from 'react';
 import Image from 'next/image'
 import styles from '../styles/nav.module.css'
 import Link from 'next/link'
@@ -44,13 +44,27 @@ function NavListMenu({props,ham, setHam}) {
 }
 
 function NavDashboard() {
+  const ref = useRef(null)
+  const [isClicked,setIsClicked] = useState(false)
+  const showLogoutButton =(a)=>{
+    if(!a){
+
+    }
+  }
   return(
-    <div className={`${styles.profileContainer} d-flex align-items-center w-75 justify-content-end`}>
-      <div className="profileImage me-3">
-        <Image className={styles.profileLogo} alt='logo' src='/profile.svg' width={35} height={35}/> 
-      </div>
-      <div className="profileDesc pt-3">
-        <p>Administrator</p>
+    <div ref={refCon} className={`${styles.profileSection} d-flex flex-column align-items-end w-75 justify-content-between`}>
+      <div className={`${styles.profileContainer} d-flex flex-column align-items-center justify-content-between`}>
+        <div className={`${styles.profileSec} d-flex align-items-center justify-content-between`}>
+          <div className="profileImage me-3">
+            <Image className={styles.profileLogo} alt='logo' src='/profile.svg' width={35} height={35}/> 
+          </div>
+          <div className="profileDesc pt-3">
+            <p>Administrator</p>
+          </div>
+        </div>
+        <div className={`${styles.logoutContainer} d-flex justify-content-center`}>
+          <Link href='/'>Logout</Link>
+        </div>
       </div>
     </div>
   )

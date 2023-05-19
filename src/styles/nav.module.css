@@ -11,8 +11,23 @@
     border-bottom: 2px solid #9f9d9d;
 
 }
+.logoutContainer{
+    font-size: 1em;
+}
+.profileSection{
+    padding-right: 2rem;
+}
+.profileSec{
+    border-bottom: 1px solid #9f9d9d;
+}
 .profileContainer{
-    margin-right: 2rem;
+    background-color: rgb(223, 223, 223);
+    box-shadow: 0 2px 4px black;
+    position: absolute;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 6rem;
+    padding: .2rem;
 }
 
 .ulNav2{
