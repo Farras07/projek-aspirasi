@@ -44,16 +44,22 @@ function NavListMenu({props,ham, setHam}) {
 }
 
 function NavDashboard() {
-  const ref = useRef(null)
-  const [isClicked,setIsClicked] = useState(false)
+  const refCon = useRef(null)
+  const refButton = useRef(null)
+  const [isClicked,setIsClicked] = useState(true)
   const showLogoutButton =(a)=>{
+    setIsClicked(!isClicked)
+    console.log(isClicked)
     if(!a){
-
+      refButton.current.style.display='none'
+    }
+    else{
+      refButton.current.style.display='flex'
     }
   }
   return(
-    <div ref={refCon} className={`${styles.profileSection} d-flex flex-column align-items-end w-75 justify-content-between`}>
-      <div className={`${styles.profileContainer} d-flex flex-column align-items-center justify-content-between`}>
+    <div className={`${styles.profileSection} d-flex flex-column align-items-end w-75 justify-content-between`}>
+      <div ref={refCon} className={`${styles.profileContainer} d-flex flex-column align-items-center justify-content-between`} onClick={()=>showLogoutButton(isClicked)}>
         <div className={`${styles.profileSec} d-flex align-items-center justify-content-between`}>
           <div className="profileImage me-3">
             <Image className={styles.profileLogo} alt='logo' src='/profile.svg' width={35} height={35}/> 
@@ -62,7 +68,7 @@ function NavDashboard() {
             <p>Administrator</p>
           </div>
         </div>
-        <div className={`${styles.logoutContainer} d-flex justify-content-center`}>
+        <div ref={refButton} className={`${styles.logoutContainer}`}>
           <Link href='/'>Logout</Link>
         </div>
       </div>
