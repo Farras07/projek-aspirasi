@@ -2,11 +2,14 @@ import {React,useState,useRef,useEffect} from 'react'
 import styles from '../styles/responsePageContent.module.css'
 import Image from 'next/image'
 
+
 export default function PinnedResponseContent(props) {
     const {post: datas } = props.data
+
     const {token} =props
 
    
+
 
     const [isFilterShow,setIsFilterShow] = useState(false)
     const [dataChange, setDataChange] = useState(datas);
@@ -35,7 +38,18 @@ export default function PinnedResponseContent(props) {
       );
       setDataChange(updatedData);
       }
-
+      const deleteHandler = async (id,token) =>{
+        const response = await fetch(`/api/aspiration/${id}`, {
+          method: "DELETE",
+          headers:{
+            "Content-Type" : "application/json",
+            "Authorization" : "Bearer " + token
+          },
+        })
+        const updatedData = dataChange.filter((data)=>data._id !==id)
+        setDataChange(updatedData)
+      }
+      
 
       const sortingNewestByDate = () =>{
         
@@ -51,6 +65,9 @@ export default function PinnedResponseContent(props) {
         console.log(sortedData)
         setDataChange(sortedData);
       }
+      const handleFilterMenu=(e)=>{
+        setAscSortFilter(e.target.value)
+    }
 
     const handleFilter=(a)=>{
         setIsFilterShow(!isFilterShow)
@@ -72,20 +89,20 @@ export default function PinnedResponseContent(props) {
             <div className={`${styles.filterMenu}`} ref={ref}>
                 <div className={`${styles.FilterMenuItem} d-flex justify-content-around align-items-center`}>
                     <label htmlFor='shortTime'>Urutkan dari yang terbaru</label>
-                    <input onClick={()=>sortingNewestByDate()} type="radio" radioGroup='grupRadio' name='grupRadio' id='shortTime'/>
+                    <input onClick={sortingNewestByDate} type="radio" radioGroup='grupRadio' name='grupRadio' id='shortTime' value={true} onChange={handleFilterMenu}/>
                 </div>
                 <div className={`${styles.FilterMenuItem} d-flex justify-content-around align-items-center`}>
                     <label htmlFor='longTime'>Urutkan dari yang terlama</label>
-                    <input onClick={()=>sortingOldestByDate()} type="radio" radioGroup='grupRadio' name='grupRadio' id='longTime'/>
+                    <input onClick={sortingOldestByDate} type="radio" radioGroup='grupRadio' name='grupRadio' id='longTime' value={false} onChange={handleFilterMenu} defaultChecked/>
                 </div>
                 
             </div>
         </div>
 
-        {dataChange.map((data , i) =>( data.pinned ? (
+        <section className={`${styles.commentSection}` }>
+        {dataChange.map((data , i) =>( data.pinned? (
 
-        <section key={i} className={`${styles.commentSection}` }>
-        <article className={`${styles.cardComment}`}>
+        <article key={i} className={`${styles.cardComment}`}>
             <div className={`${styles.commentProfile} d-flex justify-content-center align-items-center flex-column text-center`}>
                 <h3 className={`${styles.h3} text-white`}>{data.nama}</h3>
                 <p className='text-white'>{data.nim}</p>
@@ -93,7 +110,10 @@ export default function PinnedResponseContent(props) {
             <div className={`${styles.commentContainer}`}>
                 <div className="headerComment d-flex justify-content-between">
                     <p className={`${styles.pComment}`}>{data.date}</p>
-                    <span onClick={()=>pinnedHandler(data._id, token)} className={`${styles.unpinButton}`}><Image alt='unpin'src='/unpin.svg' width={30} height={30}/></span>
+             <div className={`${styles.action} d-flex justify-content-between`}>
+                        <span onClick={()=>pinnedHandler(data._id,token)} className={`${styles.unpinButton}`}><Image alt='unpin'src='/unpin.svg' width={30} height={30}/></span>
+                        <span onClick={()=>deleteHandler(data._id,token)} className={`${styles.deleteButton}`}><Image alt='delete' src='/bin.svg' width={30} height={30}/></span>
+                    </div>
                 </div>
                 <h3 className={`${styles.h3}`}>Aspirasi Untuk Prodi</h3>
                 <p className={`${styles.pComment}`}>{data.aspro}</p>
@@ -103,13 +123,10 @@ export default function PinnedResponseContent(props) {
         </article>
 
 
+
+): null))}
         </section>
-
-        ): null
-
-
-        ))}
-        </section>
+    </section>
         
   )
 }
