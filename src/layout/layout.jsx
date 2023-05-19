@@ -7,7 +7,7 @@ export default function Layout(props){
     return(
         <>
          <Head>
-<title> Aspirasi </title>
+<title> Aspirasi | {props.page} </title>
 <meta name="description" content="Website NextJs Basic" />
      </Head>
         

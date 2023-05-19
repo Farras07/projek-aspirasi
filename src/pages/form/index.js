@@ -6,63 +6,19 @@ import styles from '../../styles/form.module.css'
 import Layout from '@/layout/layout.jsx'
 
 export default function index() {
-//   const { MongoClient } = require('mongodb')
-// const url = 'mongodb://127.0.0.1:27017';
-// const dbName = 'dbProject';
-// const client = new MongoClient(url,{
-//     useNewUrlParser: true,
-//     useUnifiedTopology:true
-// });
-// client.connect((e,client) =>{
-//     if(e) {
-//         return console.log('Koneksi Gagal')
-//     }
-//     console.log('Koneksi berhasil')
 
-//     const db =client.db(dbName)
-//     // db.collection('mahasiswa').insertOne(
-//     //     {
-//     //         nama: 'Lala',
-//     //         Paralel:'C',
-//     //         NPM:'009'
-//     //     },
-//     //     (e,result) =>{
-//     //         if(e){
-//     //             return console.log('Gagal BOS!!')
-//     //         }
-//     //         console.log('Berhasil BOSS!!')
-//     //         console.log(result.ops)
-//     //     }
-//     // )
-//     // console.log(
-//     //     db
-//     //     .collection('mahasiswa')
-//     //     .find()
-//     //     .toArray((e,result) => {
-//     //         console.log(result)
-//     //     } 
-//     //     )
-//     // )
+  const addAspirationHandler = async (data) =>{
+    const response = await fetch("/api/aspiration", {
+      method: "POST",
+      body:  JSON.stringify(data),
+      headers:{
+        "Content-Type" : "application/json"
+      }
+    })
 
-//     db.collection('mahasiswa').updateOne(
-//         {
-//             nama:'Henry'
-//         },
-//         {
-//           $set: {
-//             paralel:'A'
-//         }
-//         }
-//      )
-//      .then(result =>{
-//         console.log('Berhasil Mengubah Data')
-//         console.log(result)
-//      })
-//      .catch(e=>{
-//         console.log('GAGAL!!!')
-//      })
-// })
-
+    const responseData = await response.json()
+    console.log(responseData)
+  }
 
   return (
     <>
@@ -86,16 +42,13 @@ export default function index() {
             <section className={`${styles.socmedSection}`}>
               <h3 className='fw-bold mb-4'>Social Media</h3>
               <div className={`${styles.socmedList}`}>
-                <a href="#" className='mb-3 text-decoration-underline'>Instagram</a>
-                <a href="#" className='mb-3 text-decoration-underline'>Twitter</a>
-                <a href="#" className='text-decoration-underline'>Facebook</a>
-
+                <a href="https://instagram.com/hmpska_ump?igshid=MmJiY2I4NDBkZg==" className='mb-3 text-decoration-underline'>Instagram</a>
               </div>
             </section>
           </div>
         </div>
         <div className={`${styles.rightContainer}`} id='formSection'>
-          <Myform styles={styles}/>
+          <Myform styles={styles} addAspirationHandler={addAspirationHandler}/>
         </div>
       </div>
     </Layout>
