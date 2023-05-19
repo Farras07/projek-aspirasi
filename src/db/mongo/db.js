@@ -8,7 +8,7 @@ async function dbConnect() {
         return
     }
 
-   const db = await mongoose.connect('mongodb://localhost:27017/aspirations',{
+   const db = await mongoose.connect('mongodb://127.0.0.1:27017/aspirations',{
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });

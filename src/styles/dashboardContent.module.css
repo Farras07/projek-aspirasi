@@ -61,3 +61,7 @@
     flex-direction: column;
     display: none;
 }
+.FilterMenuItem input{
+    width: 1.5rem;
+    height: 1.5rem;
+}

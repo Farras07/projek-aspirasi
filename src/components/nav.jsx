@@ -52,9 +52,14 @@ function NavDashboard() {
     console.log(isClicked)
     if(!a){
       refButton.current.style.display='none'
+      refCon.current.style.backgroundColor = 'transparent'
+      refCon.current.style.boxShadow= 'none'
     }
     else{
       refButton.current.style.display='flex'
+      refCon.current.style.backgroundColor = 'rgb(223, 223, 223)'
+      refCon.current.style.boxShadow= '0 2px 4px black'
+
     }
   }
   return(
