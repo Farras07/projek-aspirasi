@@ -20,7 +20,6 @@ export default function Nav(props) {
     </div>
     {(props.page ==='dashboard'? <NavDashboard />: <NavListMenu props={props} ham={ham} setHam={setHam}/>)}
     
-    
   </nav>
   )
 }
@@ -29,10 +28,11 @@ function NavListMenu({props,ham, setHam}) {
 
   return(
     <>
-      <ul className={`${styles.ulNav} ${props.page === 'home' ? '' : styles.ulNavWhite} col-xl-5  col-md-5 d-flex ${ ham ? styles.show : ''}  `}>
-      <li className=' col-xl-5  pt-4 d-inline'><Link href="/">Home</Link></li>
-      <li className={` col-xl-5 ${ props.page === 'home' ? '' :  styles.ulHide}  pt-4 d-inline`}><Link href="#about">About</Link></li>
-      <li className={` col-xl-5   pt-4 d-inline`}><Link href="#contact">Contact</Link></li>
+    <ul className={`${styles.ulNav} ${props.page === 'home' ? '' : styles.ulNavWhite} col-xl-5  col-md-5 d-flex ${ ham ? styles.show : ''}`}>
+      <li className=' col-xl-4  pt-4 d-inline'><Link href="/">Home</Link></li>
+      <li className={` col-xl-4 ${ props.page === 'home' ? '' :  styles.ulHide}  pt-4 d-inline`}><Link href="#about">About</Link></li>
+      <li className={` col-xl-4  pt-4 d-inline`}><Link href="#contact">Contact</Link></li>
+      <li className={` col-xl-4  ${ props.page === 'home' ? '' :  styles.ulHide} pt-4 d-inline`}><Link href="/login">Login</Link></li>
     </ul>
     <div onClick={()=> setHam(!ham)} className={`${ styles.hamNav}    d-flex flex-column `}>
       <span className={`${ styles.an11 } ${ props.page === 'home' ? styles.bgWhite :  styles.bgBlack}   w-100 m-1 p-0 ${ ham ? styles.an1 : ''} `}></span>
