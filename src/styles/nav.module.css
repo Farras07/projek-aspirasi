@@ -28,7 +28,7 @@
 
 
 .navBarWhite{
-    background-color:white;
+    background-color:red !important;
     position: fixed;
     width:100%;
     top:0px;
