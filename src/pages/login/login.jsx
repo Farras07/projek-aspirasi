@@ -63,11 +63,11 @@ export default function Login() {
                     <h1 className={Styles.h1}>Login</h1>
                     <form onSubmit={loginHandler} className={Styles.formLogin}>
                         <div className={Styles.inputUsername}>
-                            <label for="">Username</label>
+                            <label htmlfor="">Username</label>
                             <input onChange={fieldHandler} name="username" type="text" placeholder="Masukkan Username" />
                         </div>
                         <div className={Styles.inputPassword}>
-                            <label for="">Password</label>
+                            <label htmlfor="">Password</label>
                             <input onChange={fieldHandler} name="password" type="password" placeholder="Masukkan Password" />
                         </div>
                         <button type="submit" className={Styles.btn}>Login</button>

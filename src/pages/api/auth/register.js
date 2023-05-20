@@ -3,6 +3,7 @@ import user from '@/model/user';
 import bcrypt from 'bcryptjs'
 
 export default async function handler(req, res){
+    console.log(req.body.username) 
     
     if(req.method !== 'POST') return res.status(405).end();
     console.log(req.body)
@@ -27,7 +28,6 @@ export default async function handler(req, res){
 
     const registeredUser = await user.findById({_id:register._id}).select('_id')
     
-
     res.status(200)
     res.json({
         message:'user registered successfully',

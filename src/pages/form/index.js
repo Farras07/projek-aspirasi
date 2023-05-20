@@ -59,10 +59,7 @@ export default function index() {
             <section className={`${styles.socmedSection}`}>
               <h3 className='fw-bold mb-4'>Social Media</h3>
               <div className={`${styles.socmedList}`}>
-                <a href="#" className='mb-3 text-decoration-underline'>Instagram</a>
-                <a href="#" className='mb-3 text-decoration-underline'>Twitter</a>
-                <a href="#" className='text-decoration-underline'>Facebook</a>
-
+                <a href="https://instagram.com/hmpska_ump?igshid=MmJiY2I4NDBkZg==" className='mb-3 text-decoration-underline'>Instagram</a>
               </div>
             </section>
           </div>
