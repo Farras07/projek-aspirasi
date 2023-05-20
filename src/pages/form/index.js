@@ -13,9 +13,32 @@ export default function index() {
 
   const router = useRouter()
 
-  const addAspirationHandler = async (data) =>{
 
+  const addAspirationHandler = async (data) =>{
+ 
+    const payload ={
+      nama:data.nama,
+      nip: data.nim,
+      prodi: "B2584B32-CD06-4A9A-864F-1E2B6FA1B044",
+      pt: "56D6D9C6-B16D-4744-ABA4-2BFFA25359C2"
+    }
+    
     setStatus('loading')
+
+  const checkIsValidMhs = await fetch("/api/mhs",{
+    method:"POST",
+    body:JSON.stringify(payload),
+    headers:{
+      "Content-Type" : "application/json"
+    }
+  })
+
+  if(!checkIsValidMhs.ok) return setStatus('Mahasiswa tidak ditemukan' + checkIsValidMhs.status);
+
+
+   
+
+if(checkIsValidMhs.ok) {   
 
     const response = await fetch("/api/aspiration", {
       method: "POST",
@@ -25,16 +48,18 @@ export default function index() {
       }
     })
 
-    if(!response.ok) return setStatus('error' + response.status);
+    if(!response.ok) return setStatus('error ' + response.status);
 
     const responseData = await response.json()
 
     
-    setStatus('success')
+    setStatus('Aspirasi berhasil terkirim!')
     
     console.log(responseData)
 
     router.push('/form')
+
+  }
   }
 
   return (

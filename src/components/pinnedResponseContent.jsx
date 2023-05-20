@@ -31,7 +31,7 @@ export default function PinnedResponseContent(props) {
         })
     
         const responseData = await response.json()
-        console.log(responseData)
+
 
         const updatedData = dataChange.map((data) =>
         data._id === id ? { ...data, pinned: false } : data
@@ -54,7 +54,6 @@ export default function PinnedResponseContent(props) {
       const sortingNewestByDate = () =>{
         
         const sortedData = dataChange.sort((a, b) => new Date(b.date) - new Date(a.date));
-        console.log(sortedData)
         setDataChange(sortedData);
       }
 
@@ -62,7 +61,6 @@ export default function PinnedResponseContent(props) {
       const sortingOldestByDate = () =>{
         
         const sortedData = dataChange.sort((a, b) => new Date(a.date) - new Date(b.date));
-        console.log(sortedData)
         setDataChange(sortedData);
       }
       const handleFilterMenu=(e)=>{

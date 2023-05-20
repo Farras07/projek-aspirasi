@@ -6,9 +6,7 @@ import Image from 'next/image'
 export default function ResponsePageContent(props) {
     let {post: datas } = props.data
     const {token} = props
-    console.log(props)
-    console.log(token)
-
+    
     const [isFilterShow,setIsFilterShow] = useState(false)
     const [ascSortFilter,setAscSortFilter] = useState(false)
     const [dataChange, setDataChange] = useState(datas);
@@ -20,7 +18,7 @@ export default function ResponsePageContent(props) {
 
 
     const pinnedHandler = async (id,token) =>{
-      alert(token)
+      
         const response = await fetch(`/api/aspiration/${id}`, {
           method: "PUT",
           headers:{
@@ -31,7 +29,7 @@ export default function ResponsePageContent(props) {
         })
     
         const responseData = await response.json()
-        console.log(responseData)
+    
 
         const updatedData = dataChange.map((data) =>
       data._id === id ? { ...data, pinned: true } : data
@@ -55,7 +53,7 @@ export default function ResponsePageContent(props) {
       const sortingNewestByDate = () =>{
         
         const sortedData = dataChange.sort((a, b) => new Date(b.date) - new Date(a.date));
-        console.log(sortedData)
+       
         setDataChange(sortedData);
       }
 
@@ -63,7 +61,6 @@ export default function ResponsePageContent(props) {
       const sortingOldestByDate = () =>{
         
         const sortedData = dataChange.sort((a, b) => new Date(a.date) - new Date(b.date));
-        console.log(sortedData)
         setDataChange(sortedData);
       }
       
