@@ -4,10 +4,19 @@ import NavForm from '../../components/navForm.jsx'
 import Head from 'next/head'
 import styles from '../../styles/form.module.css'
 import Layout from '@/layout/layout.jsx'
+import { useState } from 'react'
+import { useRouter } from 'next/router.js'
 
 export default function index() {
 
+  const [status, setStatus] = useState('')
+
+  const router = useRouter()
+
   const addAspirationHandler = async (data) =>{
+
+    setStatus('loading')
+
     const response = await fetch("/api/aspiration", {
       method: "POST",
       body:  JSON.stringify(data),
@@ -16,8 +25,16 @@ export default function index() {
       }
     })
 
+    if(!response.ok) return setStatus('error' + response.status);
+
     const responseData = await response.json()
+
+    
+    setStatus('success')
+    
     console.log(responseData)
+
+    router.push('/form')
   }
 
   return (
@@ -52,6 +69,7 @@ export default function index() {
         </div>
         <div className={`${styles.rightContainer}`} id='formSection'>
           <Myform styles={styles} addAspirationHandler={addAspirationHandler}/>
+          <p>{status}</p>
         </div>
       </div>
     </Layout>
