@@ -1,8 +1,13 @@
 import  React from 'react'
 import {useRef} from 'react'
+import { toast } from 'react-toastify'
 
 export default function Form({styles, addAspirationHandler}) {
-  
+    const handleFlashMessage=()=>{
+        toast.success('Aspirasi Anda Sudah Terkirim',{
+          position:toast.POSITION.TOP_CENTER
+        })
+      }
     const nama = useRef()
     const nim = useRef()
     const aspro = useRef()
@@ -18,6 +23,7 @@ export default function Form({styles, addAspirationHandler}) {
             asphim: asphim.current.value,
         }
         addAspirationHandler(formData)
+        handleFlashMessage()
     }
   
     

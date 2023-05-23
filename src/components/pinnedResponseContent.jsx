@@ -1,6 +1,9 @@
 import {React,useState,useRef,useEffect} from 'react'
 import styles from '../styles/responsePageContent.module.css'
 import Image from 'next/image'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+import { toast } from 'react-toastify'
 
 
 export default function PinnedResponseContent(props) {
@@ -20,6 +23,21 @@ export default function PinnedResponseContent(props) {
         setDataChange(dataChange);
       }, [dataChange]);
 
+      const handleFlashMessageUnpin=()=>{
+        toast.success('Berhasil Unpin Aspirasi',{
+          position:toast.POSITION.TOP_CENTER,
+          autoClose:1500,
+          transition: Rotate
+
+        })
+      }
+      const handleFlashMessageDelete=()=>{
+        toast.success('Berhasil Menghapus Aspirasi',{
+          position:toast.POSITION.TOP_CENTER,
+          autoClose:1500
+        })
+      }
+
     const pinnedHandler = async (id,token) =>{
         const response = await fetch(`/api/aspiration/${id}`, {
           method: "PUT",
@@ -37,6 +55,7 @@ export default function PinnedResponseContent(props) {
         data._id === id ? { ...data, pinned: false } : data
       );
       setDataChange(updatedData);
+      handleFlashMessageUnpin()
       }
       const deleteHandler = async (id,token) =>{
         const response = await fetch(`/api/aspiration/${id}`, {
@@ -48,6 +67,7 @@ export default function PinnedResponseContent(props) {
         })
         const updatedData = dataChange.filter((data)=>data._id !==id)
         setDataChange(updatedData)
+        handleFlashMessageDelete()
       }
       
 
@@ -80,6 +100,7 @@ export default function PinnedResponseContent(props) {
     }
   return (
     <section className={`${styles.container}`}>
+        <ToastContainer />
         <div className={`${styles.headerContent} d-flex justify-content-between`}>
             <h1 className={`${styles.h1} fw-bold mb-4`}>Pinned Responses</h1>
             <div className={`${styles.filterButton} d-flex justify-content-evenly align-items-center`} onClick={()=>handleFilter(isFilterShow)}>
@@ -121,9 +142,6 @@ export default function PinnedResponseContent(props) {
                 <p className={`${styles.pComment}`}>{data.asphim}</p>
             </div>
         </article>
-
-
-
 ): null))}
         </section>
     </section>

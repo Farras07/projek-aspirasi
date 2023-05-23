@@ -1,5 +1,4 @@
 import mongoose from "mongoose"
-
 const AspirationSchema  = new mongoose.Schema({
     nama :{
         type: String,
@@ -17,13 +16,9 @@ const AspirationSchema  = new mongoose.Schema({
         type: String,
         required: true,
     },
-    date: {
-        type: String,
-        required: true,
-    },
     date:{
         type: Date,
-        default: Date.now(),
+        default: new Date(),
 
     },
     pinned:{

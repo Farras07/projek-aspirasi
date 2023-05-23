@@ -1,26 +1,39 @@
 import {React,useState,useRef, useEffect} from 'react'
 import styles from '../styles/responsePageContent.module.css'
 import Image from 'next/image'
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+import { toast } from 'react-toastify'
 
 export default function ResponsePageContent(props) {
     let {post: datas } = props.data
     const {token} = props
-    console.log(props)
-    console.log(token)
 
     const [isFilterShow,setIsFilterShow] = useState(false)
     const [ascSortFilter,setAscSortFilter] = useState(false)
-    const [dataChange, setDataChange] = useState(datas);
+    const [dataChange, setDataChange] = useState(datas)
+    const data = dataChange.map((data)=>console.log(data.date))
     const ref = useRef(null)
     useEffect(() => {
         setDataChange(dataChange);
       }, [dataChange]);
     
+      const handleFlashMessagePin=()=>{
+        toast.success('Berhasil Pin Aspirasi',{
+          position:toast.POSITION.TOP_CENTER,
+          autoClose:1500
 
+        })
+      }
+      const handleFlashMessageDelete=()=>{
+        toast.success('Berhasil Menghapus Aspirasi',{
+          position:toast.POSITION.TOP_CENTER,
+          autoClose:1500
+
+        })
+      }
 
     const pinnedHandler = async (id,token) =>{
-      alert(token)
         const response = await fetch(`/api/aspiration/${id}`, {
           method: "PUT",
           headers:{
@@ -31,12 +44,12 @@ export default function ResponsePageContent(props) {
         })
     
         const responseData = await response.json()
-        console.log(responseData)
 
         const updatedData = dataChange.map((data) =>
       data._id === id ? { ...data, pinned: true } : data
     );
     setDataChange(updatedData);
+    handleFlashMessagePin()
 
       }
       const deleteHandler = async (id,token) =>{
@@ -49,13 +62,13 @@ export default function ResponsePageContent(props) {
         })
         const updatedData = dataChange.filter((data)=>data._id !==id)
         setDataChange(updatedData)
+        handleFlashMessageDelete()
       }
       
 
       const sortingNewestByDate = () =>{
         
         const sortedData = dataChange.sort((a, b) => new Date(b.date) - new Date(a.date));
-        console.log(sortedData)
         setDataChange(sortedData);
       }
 
@@ -63,7 +76,6 @@ export default function ResponsePageContent(props) {
       const sortingOldestByDate = () =>{
         
         const sortedData = dataChange.sort((a, b) => new Date(a.date) - new Date(b.date));
-        console.log(sortedData)
         setDataChange(sortedData);
       }
       
@@ -83,6 +95,7 @@ export default function ResponsePageContent(props) {
   return (
     <>
     <section className={`${styles.container}`}>
+      <ToastContainer />
         <div className={`${styles.headerContent} d-flex justify-content-between`}>
             <h1 className={`${styles.h1} fw-bold mb-4`}>Responses</h1>
             <div className={`${styles.filterButton} d-flex justify-content-evenly align-items-center`} onClick={()=>handleFilter(isFilterShow)}>
@@ -112,7 +125,6 @@ export default function ResponsePageContent(props) {
                 <div className={`${styles.commentContainer}`}>
                     <div className="headerComment d-flex justify-content-between">
                         <p className={`${styles.pComment}`}>{data.date}</p>
-=
                         <div className={`${styles.action} d-flex justify-content-between`}>
                           <span onClick={()=>{pinnedHandler(data._id,token)}} className={`${styles.pinButton}`}><Image alt='pin'src='/pin.svg' width={30} height={30}/></span>
                           <span onClick={()=>{deleteHandler(data._id,token)}} className={`${styles.deleteButton}`}><Image alt='delete' src='/bin.svg' width={30} height={30}/></span>

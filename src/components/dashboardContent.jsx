@@ -1,12 +1,29 @@
 import {React,useState,useRef} from 'react'
 import styles from '../styles/dashboardContent.module.css'
 import Image from 'next/image'
+import LineChart from '../components/lineChart.jsx'
+
+
+
 
 export default function DashboardContent(props) {
     const {post: datas } = props.data
     const {token} =props
+    const monthList = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","November","Desember"]
+    const [dataChart,setDataChart] = useState({
+        labels:handlerDataChart(monthList,datas).map(data=>data.month) ,
+        datasets: [{
+            label : "Aspirations Gained",
+            data:handlerDataChart(monthList,datas).map(data=>data.numberAspiration),
+            backgroundColor:[
+                "rgba(75,192,192,1)",
+                "#ecf0f1",
+                "#50AF95"
+            ],
+            borderColor:"black"
+        }]
+    })
     
-    console.log( datas)
     const [isFilterShow,setIsFilterShow] = useState(false)
     const ref = useRef(null)
     const handleFilter=(a)=>{
@@ -47,23 +64,82 @@ export default function DashboardContent(props) {
         <div className="chartContainer">
             <div className={`${styles.headerChart} my-3 d-flex justify-content-between`}>
                 <h1 className={`${styles.h1} fw-bold mb-4`}>Response Chart</h1>
-                <div className={`${styles.filterButton} d-flex justify-content-evenly align-items-center`} onClick={()=>handleFilter(isFilterShow)}>
-                    <Image alt='image' src='filter.svg' width={20} height={20}/>
-                    <span className='text-white'>Filter</span>
-                </div>
-                <div className={`${styles.filterMenu}`} ref={ref}>
-                <div className={`${styles.FilterMenuItem} d-flex justify-content-around align-items-center`}>
-                    <label htmlFor='shortTime'>Urutkan dari yang terbaru</label>
-                    <input type="radio" radioGroup='grupRadio' name='grupRadio' id='shortTime'/>
-                </div>
-                <div className={`${styles.FilterMenuItem} d-flex justify-content-around align-items-center`}>
-                    <label htmlFor='longTime'>Urutkan dari yang terlama</label>
-                    <input type="radio" radioGroup='grupRadio' name='grupRadio' id='longTime'/>
-                </div>
-                
             </div>
+            <div className={`${styles.chartSection}`}>
+                <LineChart data={dataChart} height={350}/>
             </div>
         </div>
     </article>
   )
+  }
+  const handlerDataChart =(monthList,datas)=>{
+    const monthArray = []
+    for(let a = 0 ;a<datas.length;a++){
+        const monthData = new Date(datas[a].date)
+        const month = monthData.getMonth()
+        const monthName = monthList[month]
+        monthArray.push(monthName)
+    }
+    const monthObject = [
+        {
+            month:monthList[0],
+            numberAspiration:monthArray.filter(data=>data === monthList[0]).length
+
+        },
+        {
+            month:monthList[1],
+            numberAspiration:monthArray.filter(data=>data === monthList[1]).length
+
+        },
+        {
+            month:monthList[2],
+            numberAspiration:monthArray.filter(data=>data === monthList[2]).length
+
+        },
+        {
+            month:monthList[3],
+            numberAspiration:monthArray.filter(data=>data === monthList[3]).length
+
+        },
+        {
+            month:monthList[4],
+            numberAspiration:monthArray.filter(data=>data === monthList[4]).length
+        },
+        {
+            month:monthList[5],
+            numberAspiration:monthArray.filter(data=>data === monthList[5]).length
+
+        },
+        {
+            month:monthList[6],
+            numberAspiration:monthArray.filter(data=>data === monthList[6]).length
+
+        },
+        {
+            month:monthList[7],
+            numberAspiration:monthArray.filter(data=>data === monthList[7]).length
+
+        },
+        {
+            month:monthList[8],
+            numberAspiration:monthArray.filter(data=>data === monthList[8]).length
+
+        },
+        {
+            month:monthList[9],
+            numberAspiration:monthArray.filter(data=>data === monthList[9]).length
+
+        },
+        {
+            month:monthList[10],
+            numberAspiration:monthArray.filter(data=>data === monthList[10]).length
+
+        },
+        {
+            month:monthList[11],
+            numberAspiration:monthArray.filter(data=>data === monthList[11]).length
+
+        }
+    ]
+    return monthObject
 }
