@@ -3,11 +3,16 @@ import { useState,useRef } from 'react';
 import Image from 'next/image'
 import styles from '../styles/nav.module.css'
 import Link from 'next/link'
+import { useRouter } from 'next/router';
+import cookie from 'js-cookie'
+
 
 export default function Nav(props) {
   const [ham, setHam] = useState(false)
+  
   console.log(props.page)
 
+ 
   return (
   <nav className={`${props.page === 'home' ? styles.navBar : styles.navBarwhite} 
   ${props.page === 'dashboard' ? styles.navBarDashboard : ''} d-flex p-2 `}>
@@ -47,6 +52,18 @@ function NavDashboard() {
   const refCon = useRef(null)
   const refButton = useRef(null)
   const [isClicked,setIsClicked] = useState(true)
+  const router = useRouter()
+
+  async function logOutHandler(e){
+    e.preventDefault()
+
+
+    cookie.remove('token')
+
+    router.push('/')
+}
+
+
   const showLogoutButton =(a)=>{
     setIsClicked(!isClicked)
     console.log(isClicked)
@@ -74,7 +91,7 @@ function NavDashboard() {
           </div>
         </div>
         <div ref={refButton} className={`${styles.logoutContainer}`}>
-          <Link href='/'>Logout</Link>
+          <Link onClick={logOutHandler} href='/'>Logout</Link>
         </div>
       </div>
     </div>

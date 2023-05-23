@@ -4,7 +4,6 @@ export function unauthPage(ctx){
     return new Promise(resolve => {
         const allCookies = cookies(ctx)
 
-    console.log(allCookies)
    
     if(allCookies.token){
       return ctx.res.writeHead(302,{
@@ -21,7 +20,6 @@ export function authPage(ctx){
     return new Promise(resolve => {
         const allCookies = cookies(ctx)
 
-    console.log(allCookies)
    
     if(!allCookies.token){
       return ctx.res.writeHead(302,{

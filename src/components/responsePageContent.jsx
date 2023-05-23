@@ -8,7 +8,11 @@ import { toast } from 'react-toastify'
 export default function ResponsePageContent(props) {
     let {post: datas } = props.data
     const {token} = props
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 539b352f67ad98130a4fe861d8108ff8b597f0e9
     const [isFilterShow,setIsFilterShow] = useState(false)
     const [ascSortFilter,setAscSortFilter] = useState(false)
     const [dataChange, setDataChange] = useState(datas)
@@ -34,6 +38,10 @@ export default function ResponsePageContent(props) {
       }
 
     const pinnedHandler = async (id,token) =>{
+<<<<<<< HEAD
+=======
+      
+>>>>>>> 539b352f67ad98130a4fe861d8108ff8b597f0e9
         const response = await fetch(`/api/aspiration/${id}`, {
           method: "PUT",
           headers:{
@@ -44,6 +52,7 @@ export default function ResponsePageContent(props) {
         })
     
         const responseData = await response.json()
+    
 
         const updatedData = dataChange.map((data) =>
       data._id === id ? { ...data, pinned: true } : data
@@ -69,6 +78,10 @@ export default function ResponsePageContent(props) {
       const sortingNewestByDate = () =>{
         
         const sortedData = dataChange.sort((a, b) => new Date(b.date) - new Date(a.date));
+<<<<<<< HEAD
+=======
+       
+>>>>>>> 539b352f67ad98130a4fe861d8108ff8b597f0e9
         setDataChange(sortedData);
       }
 

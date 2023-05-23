@@ -31,7 +31,7 @@ export default function Login() {
             body:JSON.stringify(field)
         })
 
-        if(!loginReq.ok) return setStatus('error', loginReq.status);
+        if(!loginReq.ok) return setStatus('error'+ loginReq.status);
 
         const  loginRes = await  loginReq.json()
 
