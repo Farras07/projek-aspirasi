@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import { toast } from 'react-toastify'
+import Swal from 'sweetalert2'
+
 
 
 export default function PinnedResponseContent(props) {
@@ -57,17 +59,42 @@ export default function PinnedResponseContent(props) {
       setDataChange(updatedData);
       handleFlashMessageUnpin()
       }
+
+
       const deleteHandler = async (id,token) =>{
+        Swal.fire({
+          title: 'Do you want to save the changes?',
+          showDenyButton: true,
+          showCancelButton: true,
+          confirmButtonText: 'Yes',
+          denyButtonText: 'No',
+          customClass: {
+            actions: 'my-actions',
+            cancelButton: 'order-1 right-gap',
+            confirmButton: 'order-2',
+            denyButton: 'order-3',
+          }
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire('Deleted!', '', 'success')
+             deleteReq(id, token)
+          } else if (result.isDenied) {
+            Swal.fire('Changes are not saved', '', 'info')
+          }
+        })
+      }
+
+      const  deleteReq = async (id , token) =>{
         const response = await fetch(`/api/aspiration/${id}`, {
           method: "DELETE",
           headers:{
             "Content-Type" : "application/json",
-            "Authorization" : "Bearer " + token
+            "Authorization": "Bearer " +token
           },
         })
         const updatedData = dataChange.filter((data)=>data._id !==id)
         setDataChange(updatedData)
-        handleFlashMessageDelete()
+  
       }
       
 

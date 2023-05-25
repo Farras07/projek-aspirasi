@@ -20,8 +20,18 @@ export default async function  handler (req, res){
 
     console.log(data.mahasiswa)
 
-    if(data.mahasiswa.length=== 0) return res.status(404).end();
+    console.log(req.body)
 
+
+
+    if(data.mahasiswa.length=== 0) return res.status(404).end();
+    
+    
+
+    if(String(req.body.nama).toLowerCase() !== String(data.mahasiswa[0].nama).toLowerCase()  ) return res.status(404).end();
+
+    if( req.body.nim !== data.mahasiswa.nipd ) return res.status(404).end();
+   
     res.status(200)
     res.json({
         message:'mahasiswa valid',

@@ -4,15 +4,15 @@ import Image from 'next/image'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import { toast } from 'react-toastify'
+import Swal from 'sweetalert2'
+
 
 export default function ResponsePageContent(props) {
     let {post: datas } = props.data
     const {token} = props
-<<<<<<< HEAD
 
-=======
     
->>>>>>> 539b352f67ad98130a4fe861d8108ff8b597f0e9
+
     const [isFilterShow,setIsFilterShow] = useState(false)
     const [ascSortFilter,setAscSortFilter] = useState(false)
     const [dataChange, setDataChange] = useState(datas)
@@ -38,10 +38,7 @@ export default function ResponsePageContent(props) {
       }
 
     const pinnedHandler = async (id,token) =>{
-<<<<<<< HEAD
-=======
-      
->>>>>>> 539b352f67ad98130a4fe861d8108ff8b597f0e9
+
         const response = await fetch(`/api/aspiration/${id}`, {
           method: "PUT",
           headers:{
@@ -62,26 +59,52 @@ export default function ResponsePageContent(props) {
 
       }
       const deleteHandler = async (id,token) =>{
-        const response = await fetch(`/api/aspiration/${id}`, {
-          method: "DELETE",
-          headers:{
-            "Content-Type" : "application/json",
-            "Authorization": "Bearer " +token
-          },
+      
+        Swal.fire({
+          title: 'Do you want to save the changes?',
+          showDenyButton: true,
+          showCancelButton: true,
+          confirmButtonText: 'Yes',
+          denyButtonText: 'No',
+          customClass: {
+            actions: 'my-actions',
+            cancelButton: 'order-1 right-gap',
+            confirmButton: 'order-2',
+            denyButton: 'order-3',
+          }
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire('Deleted!', '', 'success')
+             deleteReq(id, token)
+          } else if (result.isDenied) {
+            Swal.fire('Changes are not saved', '', 'info')
+          }
         })
-        const updatedData = dataChange.filter((data)=>data._id !==id)
-        setDataChange(updatedData)
-        handleFlashMessageDelete()
+        
       }
+
+    const  deleteReq = async (id ,token) =>{
+      const response = await fetch(`/api/aspiration/${id}`, {
+        method: "DELETE",
+        headers:{
+          "Content-Type" : "application/json",
+          "Authorization": "Bearer " +token
+        },
+      })
+      const updatedData = dataChange.filter((data)=>data._id !==id)
+      setDataChange(updatedData)
+
+    }
+
+
+      
+
       
 
       const sortingNewestByDate = () =>{
         
         const sortedData = dataChange.sort((a, b) => new Date(b.date) - new Date(a.date));
-<<<<<<< HEAD
-=======
-       
->>>>>>> 539b352f67ad98130a4fe861d8108ff8b597f0e9
+
         setDataChange(sortedData);
       }
 

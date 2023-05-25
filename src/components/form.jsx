@@ -1,13 +1,14 @@
 import  React from 'react'
 import {useRef} from 'react'
-import { toast } from 'react-toastify'
 
-export default function Form({styles, addAspirationHandler}) {
-    const handleFlashMessage=()=>{
-        toast.success('Aspirasi Anda Sudah Terkirim',{
-          position:toast.POSITION.TOP_CENTER
-        })
-      }
+
+export default function Form({styles, addAspirationHandler, status}) {
+
+    // const handleFlashMessage=()=>{
+    //     toast.success('Aspirasi Anda Sudah Terkirim',{
+    //       position:toast.POSITION.TOP_CENTER
+    //     })
+    //   }
     const nama = useRef()
     const nim = useRef()
     const aspro = useRef()
@@ -23,8 +24,27 @@ export default function Form({styles, addAspirationHandler}) {
             asphim: asphim.current.value,
         }
         addAspirationHandler(formData)
-        handleFlashMessage()
+
+        
     }
+
+    // if(status === 'Aspirasi berhasil terkirim!'){
+    //     toast.success('Aspirasi berhasil terkirim!',{
+    //         position:toast.POSITION.TOP_CENTER
+    //       })
+    // }else if(status === 'Mahasiswa tidak ditemukan 404'){
+    //     toast.error('Mahasiswa tidak ditemukan',{
+    //         position:toast.POSITION.TOP_CENTER
+    //       })
+    // }else{
+
+    // }
+
+    
+
+
+
+
   
     
     return (

@@ -8,6 +8,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import { useState } from 'react'
 import { useRouter } from 'next/router.js'
+import { toast } from 'react-toastify'
 
 export default function index() {
 
@@ -25,7 +26,9 @@ export default function index() {
       pt: "56D6D9C6-B16D-4744-ABA4-2BFFA25359C2"
     }
     
-    setStatus('loading')
+    const id = toast.loading('Loading' ,{
+      position:toast.POSITION.TOP_CENTER
+    });
 
   const checkIsValidMhs = await fetch("/api/mhs",{
     method:"POST",
@@ -34,8 +37,13 @@ export default function index() {
       "Content-Type" : "application/json"
     }
   })
-
-  if(!checkIsValidMhs.ok) return setStatus('Mahasiswa tidak ditemukan' + checkIsValidMhs.status);
+  
+  if(!checkIsValidMhs.ok) return toast.update(id,{render:'Mahasiswa tidak ditemukan ' +
+   checkIsValidMhs.status,type:'error',
+  isLoading: false,
+    position:toast.POSITION.TOP_CENTER,
+    autoClose:2000,
+  });
 
 
    
@@ -50,12 +58,26 @@ if(checkIsValidMhs.ok) {
       }
     })
 
-    if(!response.ok) return setStatus('error ' + response.status);
+    if(!response.ok) return toast.update(id,{render:'error' +
+    response.status,type:'error',
+   isLoading: false,
+     position:toast.POSITION.TOP_CENTER,
+     autoClose:2000,
+   });
+ ;
+   ;
 
     const responseData = await response.json()
 
     
     setStatus('Aspirasi berhasil terkirim!')
+
+    return toast.update(id,{render:'Aspirasi berhasil terkirim!',type:'success',
+  isLoading: false,
+    position:toast.POSITION.TOP_CENTER,
+    autoClose:2000,
+  });
+
     
     console.log(responseData)
 
@@ -86,7 +108,7 @@ if(checkIsValidMhs.ok) {
           </div>
         </div>
         <div className={`${styles.rightContainer}`} id='formSection'>
-          <Myform styles={styles} addAspirationHandler={addAspirationHandler}/>
+          <Myform status={status} styles={styles} addAspirationHandler={addAspirationHandler}/>
           <p>{status}</p>
         </div>
       </div>
