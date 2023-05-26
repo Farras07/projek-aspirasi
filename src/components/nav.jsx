@@ -78,17 +78,20 @@ function NavDashboard() {
 
   const showLogoutButton = (a) => {
 
-    setIsClicked(!isClicked)
-    console.log(isClicked)
+    console.log(a)
+    setIsClicked(!a)
+    console.log(a)
 
     if (!a) {
       refButton.current.style.display = 'none'
       refCon.current.style.backgroundColor = 'transparent'
       refCon.current.style.boxShadow = 'none'
+      
     } else {
       refButton.current.style.display = 'flex'
       refCon.current.style.backgroundColor = 'rgb(255, 255, 255)'
       refCon.current.style.boxShadow = ''
+
     }
 
   }
@@ -100,14 +103,14 @@ function NavDashboard() {
       <div ref={refCon} className={`${styles.profileContainer} d-flex flex-column`} onClick={() => showLogoutButton(isClicked)}>
 
         <div className={`${styles.profileSec} d-flex align-items-center justify-content-center`}>
-          <div className="profileImage me-3">
+          <div className={`${styles.profileImage} me-3`}>
             <Image className={styles.profileLogo} alt='logo' src='/profile.svg' width={30} height={30} />
           </div>
           <p>Administrator</p>
         </div>
 
         <div ref={refButton} className={`${styles.logoutContainer} text-light`}>
-          <Link onClick={logOutHandler} href='/'>Logout</Link>
+          <Link className={styles.logoutText} onClick={logOutHandler} href='/'>Logout</Link>
         </div>
 
       </div>

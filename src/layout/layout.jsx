@@ -7,11 +7,11 @@ export default function Layout(props){
     return(
         <>
          <Head>
-<title> Aspirasi | {props.page} </title>
-<meta name="description" content="Website NextJs Basic" />
-     </Head>
+            <title> Aspirasi | {props.page} </title>
+            <meta name="description" content="Website NextJs Basic" />
+        </Head>
         
-        <div >
+        <div>
             <Header page={props.page} />
             <main className={styles.overflowControl}>{props.children}</main>
             <Footer/>

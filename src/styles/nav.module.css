@@ -107,17 +107,24 @@
 
 .profileSection {
     cursor: pointer;
+    padding: .4rem .6rem;
+    border-radius: 9px;
+    box-shadow: 0 0 7px rgb(133, 132, 132);
+    border-bottom: 2px solid #121212;
 }
-
 .logoutContainer {
     z-index: 2000;
     position: absolute;
-    top: 70px;
+    top: 64.97px;
     background-color: black;
     opacity: 85%;
     box-shadow: 0 2px 5px #cfcfcf;
-    padding: 15px 45px;
     border-radius: 7px;
+    padding: 15px 53px;
+    display: none;
+}
+.logoutText{
+    font-size: .7em;
 }
 
 @media (min-width: 880px) and (max-width: 1265px) {
@@ -188,7 +195,9 @@
     .navBarDashboard .profileSection .profileContainer p {
         display: none;
     }
-
+    .profileImage{
+        margin: 0 !important;
+    }
     .ulNav.show{
         opacity: 100;
     }
@@ -254,6 +263,9 @@
 
     .bgWhite{
         background-color:white !important;   
+    }
+    .logoutContainer{
+        right: 1rem;
     }
     
 }
@@ -292,7 +304,9 @@
     .navBarDashboard .profileSection .profileContainer {
         gap: 0px;
     }
-
+    .profileImage{
+        margin: 0 !important;
+    }
     .navBarDashboard .profileSection .profileContainer p {
         display: none;
     }
@@ -362,6 +376,9 @@
 
     .bgWhite{
         background-color:white !important;   
+    }
+    .logoutContainer{
+        right: 1rem;
     }
 
 }

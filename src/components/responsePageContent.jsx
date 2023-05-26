@@ -185,7 +185,7 @@ export default function ResponsePageContent(props) {
 
     <div className={`${styles.actionBtn}`}>
 
-      <span onClick={() => pinnedHandler(data._id, token)} className={`${styles.unpinButton}`}><Image alt='unpin' src='/unpin.svg' width={25} height={25} /></span>
+      <span onClick={() => pinnedHandler(data._id, token)} className={`${styles.unpinButton}`}><Image alt='pin' src='/pin.svg' width={25} height={25} /></span>
       <span onClick={() => deleteHandler(data._id, token)} className={`${styles.deleteButton}`}><Image alt='delete' src='/bin.svg' width={25} height={25} /></span>
 
     </div>

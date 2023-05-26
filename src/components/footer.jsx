@@ -33,20 +33,20 @@ export default function Footer() {
         <div className={`${styles.leftCont}`}>
 
           <div className={`${styles.pContact}`}>
-
             <h6 className={`${styles.h6}`}>Contact :</h6>
-
             <table className={`${styles.table}`}>
-              <tr>
-                <td>Email</td>
-                <td>:</td>
-                <td>hmpskump@gmail.com</td>
-              </tr>
-              <tr>
-                <td>Number</td>
-                <td>:</td>
-                <td>+6287832637839</td>
-              </tr>
+              <thead>
+                <tr>
+                  <td>Email</td>
+                  <td>:</td>
+                  <td>hmpskump@gmail.com</td>
+                </tr>
+                <tr>
+                  <td>Number</td>
+                  <td>:</td>
+                  <td>+6287832637839</td>
+                </tr>
+              </thead>
             </table>
 
           </div>

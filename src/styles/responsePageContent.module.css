@@ -117,10 +117,15 @@
     background-color: #DCA552;
     border-radius: 10px;
 }
-
+.unpinButton{
+    cursor: pointer;
+}
 .commentContainer .unpinButton:hover{
     background-color: #991313;
     border-radius: 10px;
+}
+.deleteButton{
+    cursor: pointer;
 }
 
 @media (min-width: 200px) and (max-width: 720px) {
@@ -163,5 +168,6 @@
     .actionBtn .pinButton {
         height: 25px;
     }
+    
 
 }

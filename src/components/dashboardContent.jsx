@@ -15,13 +15,27 @@ export default function DashboardContent(props) {
         datasets: [{
             label : "Aspirations Gained",
             data:handlerDataChart(monthList,datas).map(data=>data.numberAspiration),
+            
             backgroundColor:[
                 "#5cb85c",
                 "#f0ad4e",
                 "#d9534f",
                 "#5bc0de"
             ],
-            borderColor:"#0275d8"
+            borderColor:"#0275d8",
+            options: {
+                maintainAspectRatio:false,
+                interaction: {
+                  mode: 'nearest',
+                  axis: 'x',
+                  intersect: false
+                }
+            },
+            scales: {
+                y:{
+                    beginAtZero:true,
+                }
+            }
         }]
     })
 
@@ -70,7 +84,7 @@ export default function DashboardContent(props) {
                 <div className={`${styles.dataCardItems} border-bottom border-warning border-5`}>
                     <div>
                         <h3 className='fs-6 fw-bold'>Pinned Response</h3>
-                        <p className={`${styles.p}`}>{datas.filter(item => item.pined === true).length}</p>
+                        <p className={`${styles.p}`}>{datas.filter(item => item.pinned === true).length}</p>
                     </div>
                     <span className={`${styles.logo}`}>
                         <Image alt='image' src='pin.svg' width={50} height={50} />
@@ -79,7 +93,7 @@ export default function DashboardContent(props) {
 
             </div>
 
-            <div className="chartContainer">
+            <div className="chartSection">
 
                 <div className={`${styles.headerChart} my-3 d-flex justify-content-between align-items-center`}>
 
@@ -104,8 +118,13 @@ export default function DashboardContent(props) {
                 </div>
 
                 <div className={`${styles.chartCard} border-bottom border-primary border-5`}>
-                    <LineChart data={dataChart} width={200} className={`${styles.chartData}`}/>
-                    
+                    <div className={`${styles.chartBox} d-flex align-items-center`}>
+                        <div className={`${styles.chartContainer} d-flex`}>
+                            <div className={`${styles.chartContainerBody} d-flex align-items-center`}>
+                                <LineChart data={dataChart} width={200} className={`${styles.chartData}`}/> 
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>

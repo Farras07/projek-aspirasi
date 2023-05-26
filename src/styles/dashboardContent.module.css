@@ -90,6 +90,22 @@
         -10px -10px 15px rgba(255, 255, 255, 0.5),
         10px 10px 15px rgba(70, 70, 70, 0.12);
 }
+.chartBox{
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+}
+.chartContainer{
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+.chartContainerBody{
+    justify-content: center !important;
+    height: 100%;
+    width: 100%;
+}
 
 @media (min-width: 1265px) and (max-width: 1329px) {
     
@@ -100,6 +116,22 @@
     .dataCardItems div {
         gap: 30px;
     }
+    .chartBox{
+        height: 100%;
+        width: 100%;
+    }
+     .chartContainer{
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+     .chartContainerBody{
+        height: 100%;
+        width: 200%;
+        justify-content: center!important;
+
+    } 
 
 }
 
@@ -112,6 +144,22 @@
     .dataCardItems div {
         gap: 30px;
     }
+    .chartBox{
+        height: 100%;
+        width: 100%;
+    }
+     .chartContainer{
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+     .chartContainerBody{
+        height: 100%;
+        width: 200%;
+        justify-content: center!important;
+
+    } 
 
 }
 
@@ -124,6 +172,22 @@
     .dataCardItems div {
         gap: 50px;
     }
+    .chartBox{
+        height: 100%;
+        width: 100%;
+    }
+     .chartContainer{
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+     .chartContainerBody{
+        height: 100%;
+        width: 200%;
+        justify-content: center!important;
+
+    } 
 
 }
 
@@ -136,6 +200,22 @@
     .dataCardItems div {
         gap: 30px;
     }
+    .chartBox{
+        height: 100%;
+        width: 100%;
+    }
+     .chartContainer{
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+     .chartContainerBody{
+        height: 100%;
+        width: 200%;
+        justify-content: center!important;
+
+    } 
 
 }
 
@@ -148,7 +228,36 @@
     .dataCardItems div {
         gap: 30px;
     }
+    .chartBox{
+        height: 100%;
+        width: 100%;
+    }
+    .chartContainer{
+        height: 100%;
+        width: 400%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    .chartContainerBody{
+        height: 100%;
+        width: 70rem !important;
+        justify-content: start !important;
 
+    }
+    /* .chartBox{
+        height: 80%;
+        justify-content: center !important;
+        overflow-x: scroll;
+    }
+    .chartContainer{
+        height: 100% !important;
+        width: 100% !important;
+        overflow-x: scroll;
+    }
+    .chartContainerBody{
+        justify-content: start !important;
+        width: 35rem !important;
+    } */
 }
 
 @media (min-width: 500px) and (max-width: 769px) {
@@ -166,6 +275,10 @@
     .chartData {
         height: 200px;
     }
+    .chartContainer{
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
 
 }
 
@@ -179,5 +292,20 @@
         padding: 10px 20px;
         width: 100%;
     }
+    .chartBox{
+        height: 80%;
+        justify-content: center !important;
+        overflow-x: scroll;
+    }
+    .chartContainer{
+        height: 100% !important;
+        width: 100% !important;
+        overflow-x: scroll;
+    }
+    .chartContainerBody{
+        justify-content: start !important;
+        width: 35rem !important;
+    }
+
 
 }
