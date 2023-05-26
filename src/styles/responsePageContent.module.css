@@ -1,10 +1,5 @@
-.container{
-    width: 96%;
-    position: relative;
-}
-.h1{
-    font-size: 1.4rem;
-}
+.container{width: 100%;position: relative;}.h1{font-size: 1.4rem;}
+
 .filterButton{
     background-color: #2656D0;
     width: 7rem;
@@ -12,88 +7,161 @@
     border-radius: 25px;
     cursor: pointer;
 }
+
 .filterButton:hover{
     background-color: #1446c4;
 }
+.filterMenu{
+    background-color: black;
+    opacity: 70%;
+    box-shadow: 0 2px 5px #cfcfcf;
+    position: absolute;
+    padding: 15px 30px;
+    right: 0;
+    top: 2.4rem;
+    border-radius: 10px;
+    gap: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    display: none;
+    font-size: 14px;
+}
+
+.FilterMenuItem{
+    height: 50%;
+}
+
+.FilterMenuItem input{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
 .commentSection{
     scroll-behavior: smooth;
     overflow-y: scroll;
     height: 73vh;
 }
+
 .commentSection::-webkit-scrollbar{
     display: none;
 }
+
+.cardComment{
+    overflow: hidden;
+    display: flex;
+    border: 2px solid #121212;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.contCommentProfile {
+    width: 20%;
+    background-color: #121212;
+}
+
+.commentProfile{
+    background-color: #121212;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .commentProfile h3{
     margin-bottom: .2rem;
     font-size: .7em;
 }
+
 .commentProfile p{
     font-size: .7em;
+    margin: 0;
 }
+
 .commentContainer span{
     margin-top: -.2em;
 }
-.commentContainer .pinButton:hover{
-    background-color: #DCA552;
-    border-radius: 10px;
-    cursor: pointer;
-}
-.commentContainer .unpinButton:hover{
-    background-color: #991313;
-    border-radius: 10px;
-    cursor: pointer;
-}
-.commentContainer .deleteButton:hover{
-    background-color: #000000;
-    border-radius: 10px;
-    cursor: pointer;
-}
+
 .h3{
     font-size: .9em;
     font-weight: bolder;
     margin-bottom: 0;
 }
+
 .pComment{
+    text-align: justify;
     font-size: .8em;
     margin-bottom: .4em;
 }
+
+.headerComment .pComment {
+    margin: 0;
+}
+
 .commentContainer{
     width: 80%;
     padding: .7rem;
 }
-.commentProfile{
-    width: 20%;
-    padding: .7rem ;
-    background-color: #4a4a4a;
-}
-.filterMenu{
-    background-color: aliceblue;
-    box-shadow: 0 2px 5px #cfcfcf;
-    position: absolute;
-    width: 20rem;
-    height: 10rem;
-    right: 0;
-    top: 2.4rem;
-    border-radius: 15px;
-    display: flex;
-    justify-content: space-around;
+
+.actionBtn {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f1f1;
+    padding: 0px 10px;
     flex-direction: column;
-    display: none;
+    gap: 20px;
 }
-.FilterMenuItem{
-    height: 50%;
-}
-.FilterMenuItem input{
-    width: 1.5rem;
-    height: 1.5rem;
-}
-.cardComment{
-    overflow: hidden;
-    display: flex;
-    border: 2px solid #676666;
+
+.commentContainer .pinButton:hover{
+    background-color: #DCA552;
     border-radius: 10px;
-    margin-bottom: 1rem;
 }
-.action{
-    width: 9%;
+
+.commentContainer .unpinButton:hover{
+    background-color: #991313;
+    border-radius: 10px;
+}
+
+@media (min-width: 200px) and (max-width: 720px) {
+
+    .filterButton {
+        width: 6rem;
+        height: 2rem;
+    }
+
+    .filterButton span{
+        font-size: 14px;
+    }
+
+    .cardComment{
+        flex-direction: column;
+    }
+
+    .commentContainer, .contCommentProfile{
+        width: 100%;
+    }
+
+    .commentProfile {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px .7rem;;
+    }
+
+    .commentProfile .h3{
+        margin: 0;
+    }
+
+    .actionBtn {
+        padding: 10px 0px;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .actionBtn .pinButton {
+        height: 25px;
+    }
+
 }

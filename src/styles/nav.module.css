@@ -4,57 +4,100 @@
     width:100%;
     top:0px;
     color:white;
-    
+    padding: 10px 60px;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2000;
 }
+
+.logoContainer {
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.navLogo{
+    width: 40px;
+}
+
+.navH1{
+    font-size: 16px;
+    margin:0em;
+    padding:0px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+}
+
+.navP{
+    font-size:14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0.005em;
+}
+
 .navBarDashboard{
-    height: 13vh;
     border-bottom: 2px solid #9f9d9d;
-
+    margin: 0;
+    padding: 10px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2000;
 }
 
-.logoutContainer{
-    display:flex;
-    justify-content:center;
-    font-size: 1em;
-    display: none;
+.navBarDashboard .profileSection .profileContainer {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
-.profileSection{
-    padding-right: 2rem;
+
+.navBarDashboard .profileSection .profileContainer p {
+    font-size: 14px;
+    margin: 0;
 }
-.profileSec{
-    border-bottom: 1px solid #9f9d9d;
-    cursor: pointer;
-    padding: 0 .4rem;
-    box-shadow: 0 2px 4px rgb(183, 183, 183);
-    border-radius: 15px;
+
+.navBarWhite{
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    color:black;
+    padding: 10px 60px;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2000;
 }
-.profileContainer{
-    position: absolute;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    height: 6rem;
-    padding: .2rem;
+
+.ulNav {
+    padding: 0;
+    margin: 0;
+    right: 0;
+    gap: 50px;
+}
+
+.ulNav li .link:hover {
+    color: #d9d9d9;
+}
+
+.ulNavWhite {
+    gap: 50px;
+}
+
+.ulNavWhite li .link:hover {
+    color: #121212;
 }
 
 .ulNav2{
     color:white;
-    
-    
 }
 
 .ulHide{
-    visibility:hidden;
-}
-
-
-
-.navBarWhite{
-    background-color:white;
-    position: fixed;
-    width:100%;
-    top:0px;
-    color:black !important;
-
+    display:none;
 }
 
 .hamNav{
@@ -62,59 +105,69 @@
 }
 
 
-.navH1{
-    font-size:1em !important;
-    margin:0em !important;
-    padding:0px !important;
-}
-.navP{
-    font-size:1em !important;
-}
-.divNavText{
-    margin-top:1em !important;
+.profileSection {
+    cursor: pointer;
 }
 
-.navLogo{
-    width:4em;
+.logoutContainer {
+    z-index: 2000;
+    position: absolute;
+    top: 70px;
+    background-color: black;
+    opacity: 85%;
+    box-shadow: 0 2px 5px #cfcfcf;
+    padding: 15px 45px;
+    border-radius: 7px;
 }
 
-@media screen and ( max-width: 992px){
-    .ulNav li{
-        margin-left: 2em;
-        margin-right: 2em;
-       
-
-    }
-
-
-}
-@media screen and ( max-width: 768px){
-    .navH1{
-        font-size:0.7em !important;
-        margin:0em !important;
-        padding:0px !important;
-    }
-    .navP{
-        font-size:0.7em !important;
-    }
-    .divNavText{
-        margin-top:1em !important;
-    }
-
-    .navLogo{
-        width:2.5em;
-    }
-
-    .ulNav li{
-        margin-left: 2em;
-        margin-right: 2em;
-
-    }
-
+@media (min-width: 880px) and (max-width: 1265px) {
     
+    .navBarDashboard {
+        padding: 10px 30px;
+    }
+
 }
 
-@media screen and ( max-width: 576px){
+@media (min-width: 700px) and (max-width: 880px) {
+    
+    .navBar, .navBarDashboard, .navBarWhite {
+        padding: 10px 30px;
+    }
+    .ulNav {
+        gap: 20px;
+    }
+
+}
+
+@media (min-width: 500px) and (max-width: 699px) {
+    
+    .navBar, .navBarDashboard, .navBarWhite {
+       padding: 10px 16px;
+    }
+
+    .logoContainer {
+        gap: 16px;
+    }
+
+    .navLogo {
+        width: 35px;
+    }
+
+    .divNavText {
+        padding: 0;
+    }
+
+    .navH1 {
+        font-size: 14px;
+    }
+
+    .navP {
+        padding: 0px;
+        font-size: 12px;
+        letter-spacing: 0.015em;
+        line-height: 12px;
+    }
+    
     .ulNav{
         display:flex;
         flex-direction:column;
@@ -122,90 +175,193 @@
         background-color: #121212;
         text-align:center;
         padding:2em;
-        right:-500px;
         top:5em;
-        transform:scale(0);
+        opacity: 0;
         z-index:1;
-        transition: all 1s ease-in-out;
+        transition: all 0.2s ease-in-out;
     }
+
+    .navBarDashboard .profileSection .profileContainer {
+        gap: 0px;
+    }
+
+    .navBarDashboard .profileSection .profileContainer p {
+        display: none;
+    }
+
     .ulNav.show{
-        right:0px;
-        transform:scale(1);
+        opacity: 100;
     }
     
     .ulNavWhite{
         color:white;
     }
-   
-    .navBar{
-       justify-content:justify-around;
-    }
-
-    .divNavText{
-        width:80%;
-    }
 
     .hamNav{
         display:flex !important;
-        width: 5em;
+        width: 40px;
+        gap: 6px;
+        cursor: pointer;
     }
 
     .hamNav2{
         display:flex !important;
-        width: 5em;
+        width: 70px;
         position:fixed;
         right:0;
     }
 
-
-
-
     .hamNav span{
-        height: 7px;
-        width:50% !important;
+        height: 4px;
         border-radius: 10px !important;
-        
-
     }
 
     .an11{
         transform : rotate(0deg) translate(0px, 0px);
-        transition: all 1s ease-in-out;
+        transition: 0.3s ease-in-out;
     }
 
     .an22{
-        transform : scale(1);
-        transition: all 1s ease-in-out;
-    }
-    .an33{
-        transform : rotate(0deg) translate(0px, 0px);
-        transition: all 1s ease-in-out;
+        transform : translate(0px, 0px);
+        transition: 0.3s ease-in-out;
+        opacity: 100;
     }
 
-    
+    .an33{
+        transform : rotate(0deg) translateX(0px);
+        transition: 0.3s ease-in-out;
+    }
 
     .an1{
-        transform : rotate(45deg) translate(10px, 10px);
-        transition: all 1s ease-in-out;
+        transform : rotate(45deg) translate(5px, 9px);
+        transition: 0.3s ease-in-out;
     }
 
     .an2{
-        transform : scale(0);
-        transition: all 1s ease-in-out;
+        transform : translateX(-30px);
+        transition: 0.3s ease-in-out;
+        opacity: 0;
     }
 
     .an3{
-        transform : rotate(-45deg) translate(11px, -11px);
-        transition: all 1s ease-in-out;
+        transform : rotate(-45deg) translate(5px, -9px);
+        transition: 0.3s ease-in-out;
     }
 
     .bgBlack{
         background-color:#000000 !important;
-        
     }
 
     .bgWhite{
-        background-color:white !important;
-        
+        background-color:white !important;   
     }
+    
+}
+
+@media (min-width: 200px) and (max-width: 499px) {
+
+    .navBar, .navBarDashboard, .navBarWhite {
+        padding: 10px 16px;
+    }
+    
+    .logoContainer .divNavText {
+        display: none;
+    }
+
+    .navBarDashboard .profileSection .profileContainer {
+        gap: 0px;
+    }
+
+    .navBarDashboard .profileSection .profileContainer p {
+        display: none;
+    }
+
+    .ulNav{
+        display:flex;
+        flex-direction:column;
+        position:absolute;
+        background-color: #121212;
+        text-align:center;
+        padding:2em;
+        top:5em;
+        opacity: 0;
+        z-index:1;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .navBarDashboard .profileSection .profileContainer {
+        gap: 0px;
+    }
+
+    .navBarDashboard .profileSection .profileContainer p {
+        display: none;
+    }
+
+    .ulNav.show{
+        opacity: 100;
+    }
+    
+    .ulNavWhite{
+        color:white;
+    }
+
+    .hamNav{
+        display:flex !important;
+        width: 40px;
+        gap: 6px;
+        cursor: pointer;
+    }
+
+    .hamNav2{
+        display:flex !important;
+        width: 70px;
+        position:fixed;
+        right:0;
+    }
+
+    .hamNav span{
+        height: 4px;
+        border-radius: 10px !important;
+    }
+
+    .an11{
+        transform : rotate(0deg) translate(0px, 0px);
+        transition: 0.3s ease-in-out;
+    }
+
+    .an22{
+        transform : translate(0px, 0px);
+        transition: 0.3s ease-in-out;
+        opacity: 100;
+    }
+
+    .an33{
+        transform : rotate(0deg) translateX(0px);
+        transition: 0.3s ease-in-out;
+    }
+
+    .an1{
+        transform : rotate(45deg) translate(5px, 9px);
+        transition: 0.3s ease-in-out;
+    }
+
+    .an2{
+        transform : translateX(-30px);
+        transition: 0.3s ease-in-out;
+        opacity: 0;
+    }
+
+    .an3{
+        transform : rotate(-45deg) translate(5px, -9px);
+        transition: 0.3s ease-in-out;
+    }
+
+    .bgBlack{
+        background-color:#000000 !important;
+    }
+
+    .bgWhite{
+        background-color:white !important;   
+    }
+
 }
