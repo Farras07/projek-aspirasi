@@ -15,7 +15,7 @@ export default function PinnedResponseContent(props) {
 
    
 
-
+    const [ascSortFilter,setAscSortFilter] = useState(false)
     const [isFilterShow,setIsFilterShow] = useState(false)
     const [dataChange, setDataChange] = useState(datas);
     const ref = useRef(null)
