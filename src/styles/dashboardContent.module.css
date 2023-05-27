@@ -1,40 +1,54 @@
 .container{
-    width: 96%;
+    width: 100%;
     position: relative;
 }
+
+
 .h1{
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 6px;
 }
+
 .dataCardContainer{
     width: 100%;
+    padding: 10px 0px;
 }
+
 .dataCardItems{
-    border: 1px solid transparent;
-    box-shadow: 0 2px 10px rgba(196, 196, 196,0.5);
+    background: white;
+    box-shadow: 
+        -10px -10px 15px rgba(255, 255, 255, 0.5),
+        10px 10px 15px rgba(70, 70, 70, 0.12);
     display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    position: relative;
-    border-radius: 15px;
-    width: 30%;
-    padding: 1rem 2rem 0 2rem;
+    justify-content: space-between;
+    gap: 40px;
+    align-items: center;
+    border-radius: 5px;
+    padding: 20px 30px;
+    transition: all .5s;
 }
+
 .dataCardItems:hover{
     translate: 0 -.5rem;
-    transition: all .8s;
+}
 
+.dataCardItems div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
-.logo{
-    position: absolute;
-    right: 1.5rem;
-    top: 2rem;
-    z-index: 99;
-}
+
 .p{
-    margin-top: 1.5rem;
+    margin: 0;
     font-size: 2em;
     font-weight: bolder;
 }
+
+.headerChart .h1 {
+    margin: 0;
+}
+
 .filterButton{
     background-color: #2656D0;
     width: 7rem;
@@ -42,29 +56,256 @@
     border-radius: 25px;
     cursor: pointer;
 }
+
 .filterButton:hover{
     background-color: #1446c4;
-
 }
 
 .filterMenu{
-    background-color: aliceblue;
+    background-color: black;
+    opacity: 70%;
     box-shadow: 0 2px 5px #cfcfcf;
     position: absolute;
-    width: 20rem;
-    height: 10rem;
+    padding: 15px 30px;
     right: 0;
     top: 14.9rem;
-    border-radius: 15px;
+    border-radius: 10px;
+    gap: 10px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-direction: column;
     display: none;
+    font-size: 14px;
 }
-.FilterMenuItem input{
-    width: 1.5rem;
-    height: 1.5rem;
+
+.chartCard {
+    height: 400px;
+    background: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px;
+    box-shadow: 
+        -10px -10px 15px rgba(255, 255, 255, 0.5),
+        10px 10px 15px rgba(70, 70, 70, 0.12);
 }
-.chartSection{
-    height: 40vh;
+.chartBox{
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+}
+.chartContainer{
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+.chartContainerBody{
+    justify-content: center !important;
+    height: 100%;
+    width: 100%;
+}
+
+@media (min-width: 1265px) and (max-width: 1329px) {
+    
+    .dataCardItems {
+        padding: 10px 20px;
+        gap: 50px;
+    }
+    .dataCardItems div {
+        gap: 30px;
+    }
+    .chartBox{
+        height: 100%;
+        width: 100%;
+    }
+     .chartContainer{
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+     .chartContainerBody{
+        height: 100%;
+        width: 200%;
+        justify-content: center!important;
+
+    } 
+
+}
+
+@media (min-width: 1200px) and (max-width: 1264px) {
+    
+    .dataCardItems {
+        padding: 10px 20px;
+        gap: 50px;
+    }
+    .dataCardItems div {
+        gap: 30px;
+    }
+    .chartBox{
+        height: 100%;
+        width: 100%;
+    }
+     .chartContainer{
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+     .chartContainerBody{
+        height: 100%;
+        width: 200%;
+        justify-content: center!important;
+
+    } 
+
+}
+
+@media (min-width: 950px) and (max-width: 1199px) {
+    
+    .dataCardItems {
+        padding: 15px 30px;
+        gap: 50px;
+    }
+    .dataCardItems div {
+        gap: 50px;
+    }
+    .chartBox{
+        height: 100%;
+        width: 100%;
+    }
+     .chartContainer{
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+     .chartContainerBody{
+        height: 100%;
+        width: 200%;
+        justify-content: center!important;
+
+    } 
+
+}
+
+@media (min-width: 840px) and (max-width: 949px) {
+    
+    .dataCardItems {
+        padding: 15px 30px;
+        gap: 10px;
+    }
+    .dataCardItems div {
+        gap: 30px;
+    }
+    .chartBox{
+        height: 100%;
+        width: 100%;
+    }
+     .chartContainer{
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+     .chartContainerBody{
+        height: 100%;
+        width: 200%;
+        justify-content: center!important;
+
+    } 
+
+}
+
+@media (min-width: 770px) and (max-width: 839px) {
+    
+    .dataCardItems {
+        padding: 10px 20px;
+        gap: 10px;
+    }
+    .dataCardItems div {
+        gap: 30px;
+    }
+    .chartBox{
+        height: 100%;
+        width: 100%;
+    }
+    .chartContainer{
+        height: 100%;
+        width: 400%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    .chartContainerBody{
+        height: 100%;
+        width: 70rem !important;
+        justify-content: start !important;
+
+    }
+    /* .chartBox{
+        height: 80%;
+        justify-content: center !important;
+        overflow-x: scroll;
+    }
+    .chartContainer{
+        height: 100% !important;
+        width: 100% !important;
+        overflow-x: scroll;
+    }
+    .chartContainerBody{
+        justify-content: start !important;
+        width: 35rem !important;
+    } */
+}
+
+@media (min-width: 500px) and (max-width: 769px) {
+    
+    .dataCardContainer {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .dataCardItems {
+        width: 100%;
+    }
+    .chartCard {
+        overflow-x: scroll;
+    }
+    .chartData {
+        height: 200px;
+    }
+    .chartContainer{
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
+}
+
+@media (min-width: 200px) and (max-width: 499px) {
+    
+    .dataCardContainer {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .dataCardItems {
+        padding: 10px 20px;
+        width: 100%;
+    }
+    .chartBox{
+        height: 80%;
+        justify-content: center !important;
+        overflow-x: scroll;
+    }
+    .chartContainer{
+        height: 100% !important;
+        width: 100% !important;
+        overflow-x: scroll;
+    }
+    .chartContainerBody{
+        justify-content: start !important;
+        width: 35rem !important;
+    }
+
+
 }

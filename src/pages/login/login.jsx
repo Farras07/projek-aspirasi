@@ -59,7 +59,6 @@ export default function Login() {
                 <title>Login</title>
             </Head>
             <main>
-                <div></div>
                 <section className={Styles.LoginCont}>
                     <h1 className={Styles.h1}>Login</h1>
                     <form onSubmit={loginHandler} className={Styles.formLogin}>

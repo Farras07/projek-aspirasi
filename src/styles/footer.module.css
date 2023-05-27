@@ -3,154 +3,169 @@
     height:100px;
     background-color: black;
     margin:0px;
-    padding:0px;
+    padding: 30px 60px ;
     margin-top:30px;
     height:fit-content;
 }
 
-
-.pFootDiv{
-    font-size:0.8em;
-
+.rightCont {
+    width: 50%;
+    gap: 20px;
 }
 
-
-
-.navH1{
-    font-size:0.7em !important;
-    margin:0em !important;
-    padding:0px !important;
-    
+.leftCont {
+    width: 50%;
 }
-.navP{
-    font-size:0.7em !important;
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
-.divNavText{
-    margin-top:1em !important;
-    color:white;
+
+.divNavText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .navLogo{
-    width:4em;
+    width: 50px;
 }
 
-@media screen and ( max-width: 768px){
-    .navH1{
-        font-size:0.7em !important;
-        margin:0em !important;
-        padding:0px !important;
-    }
-    .navP{
-        font-size:0.7em !important;
-    }
-    .divNavText{
-        margin-top:1em !important;
-    }
+.navH1{
+    font-size: 16px;
+    margin:0em;
+    padding:0px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+}
 
-    .navLogo{
-        width:2.5em;
-    }
+.navP{
+    font-size:14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0.005em;
+}
 
-    .pFootDiv{
-        font-size:0.8em;
-    }
+.pFootDiv{
+    font-size: 14px;
+    color: #d2d2d2;
+}
 
-    .pContact{
-        font-size:0.65em;
-    }
+.pContact, .pAddr {
+    color: white;
+}
 
-    .pAddr{
-        font-size:0.65em;
-        width: 25%;
-    }
+.table {
+    padding: 0;
+    font-size: 14px;
+    color: #d2d2d2;
+    margin-bottom: 12px;
+}
 
+.table td {
+    padding-right: 5px;
+}
+
+.ul {
+    padding: 0;
+    font-size: 14px;
+    color: #d2d2d2;
+}
+
+@media screen and ( max-width: 880px){
     
+    .footCont {
+        padding: 30px 30px;
+    }
+   
 }
 
-@media screen and ( max-width: 576px){
+@media screen and ( max-width: 800px){
+    
+    .footCont {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .rightCont {
+        width: 100%;
+        align-items: center;
+    }
     .pFootDiv{
-        font-size:0.6em;
+        text-align: center;
     }
-
-    .navP{
-        font-size: 0.63em !important;
+    .leftCont {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
     }
-
-    .pAddr{
-       margin:0px !important;
-       margin-top:1em !important;
-    }
-
-
-}
-
-@media screen and ( max-width: 576px){
-    .pFootDiv{
-        font-size:0.6em;
-        
-    }
-
-    .navP{
-        font-size: 0.63em !important;
-        
+    .pContact, .pAddr {
+        width: 40%;
     }
 
 }
 
-@media screen and ( max-width: 576px){
-    .pFootDiv{
-        font-size:0.5em;
+@media screen and ( max-width: 730px){
+    
+    .leftCont {
+        justify-content: space-between;
     }
-
-    .navP{
-        font-size: 0.63em !important;
-        line-height:0.5em !important;
+    .pContact, .pAddr {
+        width: 50%;
     }
-
 }
 
-@media screen and ( max-width: 482px){
-
-    .navP{
-        font-size:0.7em !important;
-        line-height:0em !important;
-    }
-    .navLogo{
-        height:fit-content;
-    }
-
-    .footCont{
+@media screen and ( max-width: 560px){
+    
+    .logoContainer {
         flex-direction: column;
     }
+    .leftCont {
+        flex-direction: column;
+        align-items: center;
+    }
+    .pContact, .pAddr {
+        width: 100%;
+    }
+    .pContact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .pAddr {
+        text-align: center;
+    }
 
+}
+
+@media screen and ( max-width: 355px) {
     
-  
+    .footCont {
+        padding: 30px 16px;
+    }
+
 }
 
-@media screen and ( max-width: 376px){
+@media screen and ( max-width: 325px) {
 
-    .divLogo{
-        margin:0.2em !important;
-        height:fit-content !important;
-    }
-    .navP{
-        font-size:0.5em !important;
-    }
-    .navLogo{
-        height:fit-content;
-        width: 2em !important;
-        margin-top:0.2em !important;
+    .navH1 {
+        font-size: 14px;
     }
 
-    .pContact{
-        font-size:0.5em !important;
-        padding-left: 0em !important;
+    .navP {
+        padding: 0px;
+        font-size: 12px;
+        letter-spacing: 0.015em;
+        line-height: 12px;
+    }
+    .pFootDiv{
+        font-size: 12px;
+    }
+    
+    .table, .ul {
+        font-size: 12px;
     }
 
-
-.footCont{
-    flex-direction: column;
-}
-   
-  
 }

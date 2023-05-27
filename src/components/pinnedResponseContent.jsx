@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import { toast } from 'react-toastify'
+import Swal from 'sweetalert2'
+
 
 
 export default function PinnedResponseContent(props) {
@@ -27,7 +29,6 @@ export default function PinnedResponseContent(props) {
         toast.success('Berhasil Unpin Aspirasi',{
           position:toast.POSITION.TOP_CENTER,
           autoClose:1500,
-          transition: Rotate
 
         })
       }
@@ -57,17 +58,42 @@ export default function PinnedResponseContent(props) {
       setDataChange(updatedData);
       handleFlashMessageUnpin()
       }
+
+
       const deleteHandler = async (id,token) =>{
+        Swal.fire({
+          title: 'Do you want to save the changes?',
+          showDenyButton: true,
+          showCancelButton: true,
+          confirmButtonText: 'Yes',
+          denyButtonText: 'No',
+          customClass: {
+            actions: 'my-actions',
+            cancelButton: 'order-1 right-gap',
+            confirmButton: 'order-2',
+            denyButton: 'order-3',
+          }
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire('Deleted!', '', 'success')
+             deleteReq(id, token)
+          } else if (result.isDenied) {
+            Swal.fire('Changes are not saved', '', 'info')
+          }
+        })
+      }
+
+      const  deleteReq = async (id , token) =>{
         const response = await fetch(`/api/aspiration/${id}`, {
           method: "DELETE",
           headers:{
             "Content-Type" : "application/json",
-            "Authorization" : "Bearer " + token
+            "Authorization": "Bearer " +token
           },
         })
         const updatedData = dataChange.filter((data)=>data._id !==id)
         setDataChange(updatedData)
-        handleFlashMessageDelete()
+  
       }
       
 
@@ -96,53 +122,85 @@ export default function PinnedResponseContent(props) {
             ref.current.style.display='none'
         }
     }
-  return (
-    <section className={`${styles.container}`}>
+    return (
+
+
+      <>
+
+<section className={`${styles.container}`}>
         <ToastContainer />
-        <div className={`${styles.headerContent} d-flex justify-content-between`}>
-            <h1 className={`${styles.h1} fw-bold mb-4`}>Pinned Responses</h1>
-            <div className={`${styles.filterButton} d-flex justify-content-evenly align-items-center`} onClick={()=>handleFilter(isFilterShow)}>
-                <Image alt='Filter' src='/filter.svg' width={20} height={20}/>
-                <span className='text-white'>Filter</span>
-            </div>
-            <div className={`${styles.filterMenu}`} ref={ref}>
-                <div className={`${styles.FilterMenuItem} d-flex justify-content-around align-items-center`}>
-                    <label htmlFor='shortTime'>Urutkan dari yang terbaru</label>
-                    <input onClick={sortingNewestByDate} type="radio" radioGroup='grupRadio' name='grupRadio' id='shortTime' value={true} onChange={handleFilterMenu}/>
-                </div>
-                <div className={`${styles.FilterMenuItem} d-flex justify-content-around align-items-center`}>
-                    <label htmlFor='longTime'>Urutkan dari yang terlama</label>
-                    <input onClick={sortingOldestByDate} type="radio" radioGroup='grupRadio' name='grupRadio' id='longTime' value={false} onChange={handleFilterMenu} defaultChecked/>
-                </div>
-                
-            </div>
-        </div>
+  <div className={`${styles.headerContent} mb-3 d-flex justify-content-between align-items-center`}>
 
-        <section className={`${styles.commentSection}` }>
-        {dataChange.map((data , i) =>( data.pinned? (
+<h1 className={`${styles.h1} fw-bold m-0`}>Pinned Responses</h1>
+<div className={`${styles.filterButton} d-flex justify-content-evenly align-items-center`} onClick={() => handleFilter(isFilterShow)}>
+  <Image alt='Filter' src='/filter.svg' width={20} height={20} />
+  <span className='text-white'>Filter</span>
+</div>
 
-        <article key={i} className={`${styles.cardComment}`}>
-            <div className={`${styles.commentProfile} d-flex justify-content-center align-items-center flex-column text-center`}>
-                <h3 className={`${styles.h3} text-white`}>{data.nama}</h3>
-                <p className='text-white'>{data.nim}</p>
-            </div>
-            <div className={`${styles.commentContainer}`}>
-                <div className="headerComment d-flex justify-content-between">
-                    <p className={`${styles.pComment}`}>{data.date}</p>
-             <div className={`${styles.action} d-flex justify-content-between`}>
-                        <span onClick={()=>pinnedHandler(data._id,token)} className={`${styles.unpinButton}`}><Image alt='unpin'src='/unpin.svg' width={30} height={30}/></span>
-                        <span onClick={()=>deleteHandler(data._id,token)} className={`${styles.deleteButton}`}><Image alt='delete' src='/bin.svg' width={30} height={30}/></span>
-                    </div>
-                </div>
-                <h3 className={`${styles.h3}`}>Aspirasi Untuk Prodi</h3>
-                <p className={`${styles.pComment}`}>{data.aspro}</p>
-                <h3 className={`${styles.h3}`}>Aspirasi Untuk HMPS </h3>
-                <p className={`${styles.pComment}`}>{data.asphim}</p>
-            </div>
-        </article>
-): null))}
-        </section>
-    </section>
+<div className={`${styles.filterMenu}`} ref={ref}>
+
+  <div className={`${styles.FilterMenuItem} d-flex justify-content-between gap-4 align-items-center`}>
+    <label htmlFor='shortTime' className='text-light'>Urutkan dari yang terbaru</label>
+    <input onClick={sortingNewestByDate} type="radio" radioGroup='grupRadio' name='grupRadio' id='shortTime' value={true} onChange={handleFilterMenu} />
+  </div>
+  <div className={`${styles.FilterMenuItem} d-flex justify-content-between gap-4 align-items-center`}>
+    <label htmlFor='longTime' className='text-light'>Urutkan dari yang terlama</label>
+    <input onClick={sortingOldestByDate} type="radio" radioGroup='grupRadio' name='grupRadio' id='longTime' value={false} onChange={handleFilterMenu} defaultChecked />
+  </div>
+
+</div>
+
+</div>
+
+<section className={`${styles.commentSection}`}>
+{dataChange.map((data, i) => (data.pinned ? (
+
+  <article key={i} className={`${styles.cardComment}`}>
+
+    <div className={`${styles.contCommentProfile} d-flex justify-content-center`}>
+      <div className={`${styles.commentProfile}`}>
+        <h3 className={`${styles.h3} text-white text-center`}>{data.nama}</h3>
+        <p className='text-white'>{data.nim}</p>
+      </div>
+    </div>
+
+    <div className={`${styles.commentContainer}`}>
+
+      <h3 className={`${styles.h3}`}>Aspirasi Untuk Prodi</h3>
+      <p className={`${styles.pComment}`}>{data.aspro}</p>
+      <h3 className={`${styles.h3}`}>Aspirasi Untuk HMPS </h3>
+      <p className={`${styles.pComment}`}>{data.asphim}</p>
+      <div className={`${styles.headerComment} d-flex justify-content-between text-secondary`}>
+        <p className={`${styles.pComment}`}>{data.date}</p>
+      </div>
+
+    </div>
+
+    <div className={`${styles.actionBtn}`}>
+
+      <span onClick={() => pinnedHandler(data._id, token)} className={`${styles.unpinButton}`}><Image alt='unpin' src='/unpin.svg' width={25} height={25} /></span>
+      <span onClick={() => deleteHandler(data._id, token)} className={`${styles.deleteButton}`}><Image alt='delete' src='/bin.svg' width={25} height={25} /></span>
+
+    </div>
+
+  </article>
+
+) : null))}
+</section>
+
+</section>
+
         
-  )
-}
+      
+      
+      </>
+    )
+  }
+
+ 
+
+  
+  
+
+
+
