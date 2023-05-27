@@ -3,7 +3,6 @@ import Layout from '@/layout/layoutDashboard'
 import Content from '../../components/dashboardContent'
 import { authPage } from '@/middlewares/pageAuth'
 
-
 export default function index(props) {
   const {aspirationsData : data} = props
   const {token} ={props}

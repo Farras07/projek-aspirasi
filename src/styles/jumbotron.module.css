@@ -1,43 +1,60 @@
-.btnJum{
-   padding:0.5em !important;
-   border-radius: 5px;
+.jumDiv {
+   height: 100vh;
 }
+.titleText {
+   margin: 0;
+   font-size: 40px;
+}
+
 .subTitle{
-    font-size:2em !important;
-   }
+   font-size: 20px;
+   margin: 0;
+}
 
-   .jumDiv{
-      margin-top: 150px !important;
-     }
+.btnJum{
+   padding: 10px 50px;
+   border-radius: 5px;
+   transition: all .3s;
+}
 
-@media screen and ( max-width: 576px){
-   .titleText{
-    font-size:1.5em;
+.btnJum:hover {
+   box-shadow: 5px 5px 1px 0px rgba(176, 130, 60, 1),
+               10px 10px 1px 0px rgba(185, 41, 32, 1);
+}
+
+@media screen and ( max-width: 850px){
+   
+   .titleText {
+      font-size: 30px;
    }
 
    .subTitle{
-    font-size:0.5em;
+      font-size: 16px;
    }
 
-   .jumDiv{
-    margin-top: 0px !important;
-   }
-
-   .btnJum{
-    text-align:center;
-   padding:0em !important;
- }
 }
 
-@media screen and ( max-width: 768px){
- 
-    .jumDiv{
-     margin-top: 150px !important;
-    }
-    .subTitle{
-        font-size:1em !important;
-    }
+@media screen and ( max-width: 600px){
+   
+   .titleText {
+      font-size: 25px;
+   }
+   .subTitle{
+      font-size: 12px;
+   }
 
- }
+}
 
+@media screen and ( max-width: 400px) {
+   
+   .jumDiv {
+      padding: 0px 16px;
+   }
+   .images {
+      width: 30px;
+   }
+   .btnJum{
+      padding: 10px 30px;
+   }
+}
  

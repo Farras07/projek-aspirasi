@@ -7,7 +7,6 @@ export default function authorization (req, res) {
 
         const {authorization} =req.headers;
         if(!authorization) return res.status(401).end();
-        console.log(req.headers)
     
         const authSplit = authorization.split(' ')
     
